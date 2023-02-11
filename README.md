@@ -1,6 +1,6 @@
 # Hyprland with 11 themes on Arch linux
 
-**Sway Nordic Edition**
+**Wildan Pratama**
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)]()
 
