@@ -69,34 +69,17 @@ Main shortcuts: `~/.config/hypr/keybind.conf`
 
 <kbd>MOD</kbd> key is set to the <kbd>WINKEY</kbd>/<kbd>LINKEY</kbd>
 
- - <kbd>MOD</kbd>+<kbd>Return</kbd> = open terminal (kitty)
- - <kbd>MOD</kbd>+<kbd>O</kbd> = open Browser (brave)
- - <kbd>MOD</kbd>+<kbd>P</kbd> = open File Manager (nemo)
- - <kbd>MOD</kbd>+<kbd>D</kbd>= app menu (rofi)
+ - <kbd>MOD</kbd>+<kbd>Return</kbd> = open terminal
+ - <kbd>MOD</kbd>+<kbd>W</kbd> = open Browser (brave)
+ - <kbd>MOD</kbd>+<kbd>F</kbd> = open File Manager (nemo)
+ - <kbd>MOD</kbd>+<kbd>D</kbd>= open Launcher (rofi)
  - <kbd>MOD</kbd>+<kbd>Q</kbd> = close focused app [kill]
  - <kbd>MOD</kbd>+<kbd>S</kbd> = screenshot/bring up screenshot menu
  - <kbd>MOD</kbd>+<kbd>X</kbd> = power-menu
- - <kbd>ALT</kbd>+<kbd>SHIFT</kbd>+<kbd>R</kbd> = resize mode
- - <kbd>MOD</kbd>+<kbd>SHIFT</kbd>+<kbd>SPACE</kbd>  = float window
+ - <kbd>MOD</kbd>+<kbd>SPACE</kbd>  = float window
  - <kbd>MOD</kbd>+<kbd>HOLD DOWN</kbd> = drag floating window
  - <kbd>MOD</kbd>+<kbd>↑ ↓ → ←</kbd>  = switch focus respectively 
- - <kbd>MOD</kbd>+<kbd>SHIFT</kbd>+<kbd>MINUS</kbd> = send to scratchpad
- - <kbd>MOD</kbd>+<kbd>MINUS</kbd> = cycle through scratchpad
  - <kbd>MOD</kbd>+<kbd>N</kbd> = open network manager
  - <kbd>MOD</kbd>+<kbd>M</kbd> = open mpd controller
  - <kbd>MOD</kbd>+<kbd>R</kbd> = open root menu
- - <kbd>MOD</kbd>+<kbd>W</kbd> = open window menu
  
- 
- 
-
-## Tiling:
-
-Is set to default for swaywm and can be changed to:
-
-- stacking: Only the focused window in the container is displayed. You get a list of windows at the top of the container. 
-   - <kbd>MOD</kbd>+<kbd>B</kbd> = Vertical List
-   - <kbd>MOD</kbd>+<kbd>V</kbd> = Horizontal List
-     - navigate lists with <kbd>MOD</kbd>+<kbd>↑ ↓ → ←</kbd> 
-   
-
