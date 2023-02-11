@@ -170,7 +170,4 @@ apply_geany
 apply_appearance
 apply_dunst
 apply_rofi
-
-# fix cursor theme (run it in the end)
-xsetroot -cursor_name left_ptr
 notify_user

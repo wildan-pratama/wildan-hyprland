@@ -10,7 +10,6 @@ THEME="wave"
 source "$HOME"/.config/themes/"$THEME"/theme.bash
 altbackground="`pastel color $element_bg | pastel lighten $light_value | pastel format hex`"
 altforeground="`pastel color $element_fg | pastel darken $dark_value | pastel format hex`"
-modbackground=(`pastel gradient -n 7 $element_bg $altbackground | pastel format hex`)
 
 ## Directories ------------------------------
 PATH_CONF="$HOME/.config"
@@ -171,7 +170,4 @@ apply_geany
 apply_appearance
 apply_dunst
 apply_rofi
-
-# fix cursor theme (run it in the end)
-xsetroot -cursor_name left_ptr
 notify_user
