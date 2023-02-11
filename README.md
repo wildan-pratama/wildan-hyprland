@@ -41,7 +41,6 @@ pipewire wireplumber grim slurp jq dunst qt5-wayland qt6-wayland
 ### Copy Configuration and stuff
 
 ``` bash
-git clone https://github.com/wildan-pratama/wildan-hyprland.git
 cd wildan-hyprland
 sudo cp -a usr /
 sudo cp -a etc /
