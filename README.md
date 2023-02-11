@@ -4,7 +4,6 @@
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)]()
 
-https://github.com/wildan-pratama/wildan-hyprland/raw/main/Screencasts_2023-02-11-23-25-24.mkv
 
 ## Requirements
 You need install yay first
