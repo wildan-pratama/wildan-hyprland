@@ -1,0 +1,167 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "Iosevka Nerd Font";
+    border: none;
+    min-height: 0;
+    margin: 1px 3px;
+}
+
+#waybar {
+    background-color: rgba(30,33,40,0.0);
+    color: #D8DEE9;
+    transition-property: background-color;
+    transition-duration: .5s;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Module */
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#mpd,
+#disk,
+#battery,
+#backlight,
+#workspaces {
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    margin: 1px 1px;
+	border-radius: 5px;
+	background: transparent;
+    color: #516079;
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
+}
+
+#memory {
+	background: rgb(175,151,189);
+	background: linear-gradient(60deg, rgba(175,151,189,1) 0%, rgba(255,255,255,1) 100%);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#workspaces button {
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
+    background-color: #fff;
+    color: 	#cba6f7;
+    font-weight: bolder;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#workspaces button.active {
+    box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    background: linear-gradient(45deg, rgba(202,158,230,1) 0%, rgba(245,194,231,1) 43%, rgba(180,190,254,1) 80%, rgba(137,180,250,1) 100%); 
+    animation: gradient 10s ease infinite;
+    color: #fff;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+#clock {
+    background: rgb(218,176,241);
+	background: linear-gradient(60deg, rgba(218,176,241,1) 0%, rgba(148,183,224,1) 100%);
+    color: #fff ;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    animation: gradient 20s ease infinite;
+    font-weight: bolder;
+}
+
+#battery.charging, #battery.plugged {
+    background-color: #94e2d5 ;
+}
+
+#battery {
+    background-color: #fff;
+    color:#a6e3a1;
+    font-weight: bolder;
+}
+
+@keyframes blink {
+    to {
+        background-color: #f9e2af;
+        color:#96804e;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color:  #f38ba8;
+    color:#bf5673;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    background: rgb(144,211,230);
+	background: linear-gradient(60deg, rgba(144,211,230,1) 0%, rgba(175,151,189,1) 100%);
+    animation: gradient 20s ease infinite;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    /* background-color: #b4befe; */
+    color: 	#fff;
+}
+
+#memory {
+    background-color: #cba6f7;
+    color: 	#9a75c7;
+    font-weight: bolder;
+}
+
+#disk {
+    background: rgb(255,255,255);
+	background: linear-gradient(60deg, rgba(255,255,255,1) 0%, rgba(148,183,224,1) 100%);
+}
+
+#network{
+    background: rgb(166,227,161);
+	background: linear-gradient(60deg, rgba(166,227,161,1) 0%, rgba(144,211,230,1) 100%);
+}
+
+#pulseaudio {
+    background: rgb(250,179,135);
+	background: linear-gradient(60deg, rgba(250,179,135,1) 0%, rgba(166,227,161,1) 100%);
+    color: #bf7d54;
+    font-weight: bolder;
+}
+
+#tray {
+    background-color: #2980b9;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#mpd {
+    background: rgb(98,169,233);
+	background: linear-gradient(60deg, rgba(250,179,135,1) 0%, rgba(98,169,233,1) 100%);
+    color: #2a5c45;
+}
+
+#backlight {
+    background: rgb(98,169,233);
+	background: linear-gradient(60deg, rgba(98,169,233,1) 0%, rgba(250,179,135,1) 100%);
+    color: #2a5c45;
+}
+
+#battery {
+    background: rgb(148,183,224);
+	background: linear-gradient(60deg, rgba(148,183,224,1) 0%, rgba(218,176,241,1) 100%);
+    color: #90b1b1;
+}

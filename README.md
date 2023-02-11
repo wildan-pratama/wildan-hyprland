@@ -1,0 +1,2 @@
+# wildan-hyprland
+ 

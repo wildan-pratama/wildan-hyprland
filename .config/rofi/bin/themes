@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+#sed -i /home/chocolate/Git/arch-hyprland/config/hypr/hyprland2.conf -e "s/\$theme = .*/\$theme = default/g"
+
+# Import Current Theme
+DIR="$HOME/.config/themes"
+STYLE="catppuccin"
+RASI="$DIR/$STYLE/rofi/themes.rasi"
+hypr="$HOME/.config/hypr/hyprland.conf"
+
+rofi_command="rofi -theme $RASI"
+
+# Themes
+opt0="Adaptive"
+opt1="Beach"
+opt2="Catppuccin"
+opt3="Default"
+opt4="Easy"
+opt5="Forest"
+opt6="Hack"
+opt7="Manhattan"
+opt8="Slime"
+opt9="Spark"
+opt10="Wave"
+
+# Variable passed to rofi
+options="$opt0\n$opt1\n$opt2\n$opt3\n$opt4\n$opt5\n$opt6\n$opt7\n$opt8\n$opt9"
+
+# Functions
+
+chosen="$(echo -e "$options" | $rofi_command -p "Select Theme" -dmenu -selected-row 0)"
+case $chosen in
+    $opt0)
+        sed -i "$hypr" -e "s/\$theme = .*/\$theme = adaptive/g"
+        ;;
+    $opt1)
+        sed -i "$hypr" -e "s/\$theme = .*/\$theme = beach/g"
+        ;;
+    $opt2)
+        sed -i "$hypr" -e "s/\$theme = .*/\$theme = catppuccin/g"
+        ;;
+    $opt3)
+        sed -i "$hypr" -e "s/\$theme = .*/\$theme = default/g"
+        ;;
+    $opt4)
+        sed -i "$hypr" -e "s/\$theme = .*/\$theme = easy/g"
+        ;;
+    $opt5)
+        sed -i "$hypr" -e "s/\$theme = .*/\$theme = forest/g"
+        ;;
+    $opt6)
+        sed -i "$hypr" -e "s/\$theme = .*/\$theme = hack/g"
+        ;;
+    $opt7)
+        sed -i "$hypr" -e "s/\$theme = .*/\$theme = manhattan/g"
+        ;;
+    $opt8)
+        sed -i "$hypr" -e "s/\$theme = .*/\$theme = slime/g"
+        ;;
+    $opt9)
+        sed -i "$hypr" -e "s/\$theme = .*/\$theme = spark/g"
+        ;;
+    $opt10)
+        sed -i "$hypr" -e "s/\$theme = .*/\$theme = wave/g"
+        ;;
+esac
+
+
