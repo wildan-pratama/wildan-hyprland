@@ -1,4 +1,4 @@
-# Sway-WM Setup and Theme for Debian Sid
+# Hyprland with 11 themes on Arch linux
 
 **Sway Nordic Edition**
 
