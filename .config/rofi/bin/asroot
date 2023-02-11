@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/themes"
-STYLE="catppuccin"
+STYLE="adaptive"
 RASI="$DIR/$STYLE/rofi/asroot.rasi"
 
 # rofi sudo askpass helper
@@ -18,7 +18,7 @@ mesg="Run Applications As Root"
 layout=`cat ${RASI} | grep 'USE_ICON' | cut -d'=' -f2`
 if [[ "$layout" == 'NO' ]]; then
 	option_1=" Alacritty"
-	option_2=" nemo"
+	option_2=" Nemo"
 	option_3=" Geany"
 	option_4=" Vim"
 	option_5=" Custom"

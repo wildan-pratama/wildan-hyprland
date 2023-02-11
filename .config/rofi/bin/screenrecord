@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/themes"
-STYLE="catppuccin"
+STYLE="adaptive"
 RASI="$DIR/$STYLE/rofi/recording.rasi"
 time=`date +%Y-%m-%d-%H-%M-%S`
 dir="Videos/Screencasts"
@@ -39,6 +39,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 if [[ -e "$pid" ]]; then
+	sed -i ${RASI} -e "s/lines: .*/lines:                       1\;/g"
 	opt="$option_1"
 else	
 	opt="$option_2\n$option_3\n$option_4\n$option_5"
@@ -71,22 +72,18 @@ run_cmd() {
 		countdown '5'
 		wf-recorder -f "$file" 1>"$log" 2>&1 &
 		printf "$file" "$log" > "$pid"
-		sed -i ${RASI} -e "s/lines: .*/lines:                       1\;/g"
 	elif [[ "$1" == '--opt3' ]]; then
 		countdown '5'
 		wf-recorder -a -f "$file" 1>"$log" 2>&1 &
 		printf "$file" "$log" > "$pid"
-		sed -i ${RASI} -e "s/lines: .*/lines:                       1\;/g"
 	elif [[ "$1" == '--opt4' ]]; then
 		sleep 0.5
 		wf-recorder -g "$(slurp)" -f "$file" 1>"$log" 2>&1 &
 		printf "$file" "$log" > "$pid"
-		sed -i ${RASI} -e "s/lines: .*/lines:                       1\;/g"
 	elif [[ "$1" == '--opt5' ]]; then
 		sleep 0.5
 		wf-recorder -a -g "$(slurp)" -f "$file" 1>"$log" 2>&1 &
 		printf "$file" "$log" > "$pid"
-		sed -i ${RASI} -e "s/lines: .*/lines:                       1\;/g"
 	fi
 }
 

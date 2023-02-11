@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/themes"
-STYLE="catppuccin"
+STYLE="adaptive"
 RASI="$DIR/$STYLE/rofi/launcher.rasi"
 
 rofi \

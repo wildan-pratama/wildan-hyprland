@@ -136,7 +136,8 @@
 }
 
 #tray {
-    background-color: #2980b9;
+    background: rgb(106,177,219);
+	background: linear-gradient(60deg, rgba(106,177,219,1) 0%, rgba(232,154,175,1) 100%);
 }
 
 #tray > .passive {
@@ -145,7 +146,6 @@
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
 }
 
 #mpd {

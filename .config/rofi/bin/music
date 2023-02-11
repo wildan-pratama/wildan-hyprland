@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/themes"
-STYLE="catppuccin"
+STYLE="adaptive"
 RASI="$DIR/$STYLE/rofi/music.rasi"
 
 # Theme Elements
@@ -14,7 +14,7 @@ if [[ -z "$status" ]]; then
 	mesg="MPD is Offline"
 else
 	prompt="`mpc -f "%artist%" current`"
-	mesg="`mpc -f "%title%" current` :: `mpc status | grep "#" | awk '{print $3}'`"
+	mesg="`mpc -f "%title%" current`"
 fi
 
 # Options
