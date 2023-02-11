@@ -17,7 +17,17 @@ git clone https://aur.archlinux.org/yay-bin
 cd yay-bin
 makepkg -si
 ```
-After yay installed you can just run ###install.sh
+
+After yay installed you can clone this repositorie and just run `install.sh`
+
+```
+# Before this you need base-devel installed
+git clone https://github.com/wildan-pratama/wildan-hyprland.git
+cd wildan-hyprland
+./install.sh
+```
+
+Or you can install manualy with this step
 
 ### Packages
 
@@ -29,6 +39,16 @@ mpc mpd ncmpcpp xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects qt5-qu
 pipewire wireplumber grim slurp jq dunst qt5-wayland qt6-wayland
 ```
 
+### Copy Configuration and stuff
+
+``` bash
+git clone https://github.com/wildan-pratama/wildan-hyprland.git
+cd wildan-hyprland
+sudo cp -a usr /
+sudo cp -a etc /
+cp -a .config ~/
+cp -a .local ~/
+```
 
 ### Download Debian non-free netinstall
 
