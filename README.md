@@ -18,13 +18,14 @@ cd yay-bin
 makepkg -si
 ```
 
+## To Install
 After yay installed you can clone this repositorie and just run `install.sh`
 
-```
-git clone https://github.com/wildan-pratama/wildan-hyprland.git
-cd wildan-hyprland
-./install.sh
-```
+    git clone https://github.com/wildan-pratama/wildan-hyprland.git
+    cd wildan-hyprland
+
+    ./install.sh
+
 
 Or you can install manualy with this step
 
@@ -58,9 +59,8 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/cdimage/uno
 ## To Install
 
 
-    git clone https://github.com/wildan-pratama/debian-sway
-
-    cd debian-sway
+    git clone https://github.com/wildan-pratama/wildan-hyprland.git
+    cd wildan-hyprland
 
     ./install.sh
    
