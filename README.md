@@ -21,7 +21,6 @@ makepkg -si
 After yay installed you can clone this repositorie and just run `install.sh`
 
 ```
-# Before this you need base-devel installed
 git clone https://github.com/wildan-pratama/wildan-hyprland.git
 cd wildan-hyprland
 ./install.sh
