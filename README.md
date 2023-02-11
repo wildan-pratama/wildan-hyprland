@@ -55,7 +55,7 @@ cp -a .local ~/
 - After selecting theme you must open `GTK Setting` from launcher and just `Apply` button to apply gtk2 theme
 - It’s recommended to uninstall any other portal implementations to avoid conflicts with the -hyprland or -wlr ones. -kde and -gnome are known to cause issues. both -wlr and -hyprland installed at once will also cause conflicts. Choose one and uninstall the other. see https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
 ``` bash
-yay -Rs foot xdg-desktop-portal-gnome
+yay -Rs xdg-desktop-portal-gnome
 ```
 
 ## Tutorial for Hyprland settings:
