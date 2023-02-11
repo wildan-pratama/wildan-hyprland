@@ -17,16 +17,16 @@ git clone https://aur.archlinux.org/yay-bin
 cd yay-bin
 makepkg -si
 ```
+After yay installed you can just run ###install.sh
 
 ### Packages
 
 ``` bash
-yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior       \
-rofi pavucontrol thunar starship wl-clipboard wf-recorder     \
-swaybg grimblast-git ffmpegthumbnailer tumbler playerctl      \
-noise-suppression-for-voice thunar-archive-plugin kitty       \
-waybar-hyprland wlogout swaylock-effects sddm-git pamixer     \
-nwg-look-bin nordic-theme papirus-icon-theme dunst
+yay -S git sddm-git polkit hyprland-bin waybar-hyprland alacritty rofi nemo gvfs-mtp \
+file-roller swaybg swaylock-effects-git wl-clipboard mailcap mpv networkmanager-dmenu-git \
+xfce-polkit dunst geany viewnior nwg-look xdg-desktop-portal-hyprland-git qt5-svg inetutils \
+mpc mpd ncmpcpp xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects qt5-quickcontrols2 \
+pipewire wireplumber grim slurp jq dunst qt5-wayland qt6-wayland
 ```
 
 
