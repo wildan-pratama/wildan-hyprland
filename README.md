@@ -51,20 +51,20 @@ cp -a .local ~/
 
 ## Note
 - Recommend archinstall with Sway as desktop for base
-- Don't forget to enable and set sddm as defautl display manager
+- Don't forget to enable and set sddm as default display manager
 - After selecting theme you must open `GTK Setting` from launcher and just `Apply` button to apply gtk2 theme
 
-## Tutorial for sway-wm settings:
+## Tutorial for Hyprland settings:
 
  - Background handled by swaybg
- - Gtk3 theme handled by lxappearance
+ - Gtk theme handled by nwg-look
  - Filebrowser = Nemo
- - Default Terminal-Emulator = kitty
+ - Default Terminal-Emulator = alacritty
  - Text-Editor = geany/nano
  - Bar = Waybar
  - Sound = Pulseaudio
 
-Main shortcuts: `~/.config/sway/config`
+Main shortcuts: `~/.config/hypr/keybind.conf`
 
 
 <kbd>MOD</kbd> key is set to the <kbd>WINKEY</kbd>/<kbd>LINKEY</kbd>
