@@ -5,7 +5,28 @@
 [![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)]()
 
 ## Requirements
-_This install changes Debian to the SID (Dev) Branch_
+You need install yay first
+
+### Yay
+
+Run as user NOT ROOT!
+
+```
+# Before this you need base-devel installed
+git clone https://aur.archlinux.org/yay-bin
+cd yay-bin
+makepkg -si
+```
+
+### Packages
+
+``` bash
+yay -S hyprland-bin polkit-gnome ffmpeg neovim viewnior       \
+rofi pavucontrol thunar starship wl-clipboard wf-recorder     \
+swaybg grimblast-git ffmpegthumbnailer tumbler playerctl      \
+noise-suppression-for-voice thunar-archive-plugin kitty       \
+waybar-hyprland wlogout swaylock-effects sddm-git pamixer     \
+nwg-look-bin nordic-theme papirus-icon-theme dunst
 
 
 ### Download Debian non-free netinstall
