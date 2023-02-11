@@ -32,7 +32,7 @@ Or you can install manualy with this step
 ### Packages
 
 ``` bash
-yay -S git sddm-git polkit hyprland-bin waybar-hyprland alacritty rofi nemo gvfs-mtp \
+yay -S git sddm-git polkit hyprland-bin waybar-hyprland alacritty rofi nemo gvfs-mtp swayidle \
 file-roller swaybg swaylock-effects-git wl-clipboard mailcap mpv networkmanager-dmenu-git \
 xfce-polkit dunst geany viewnior nwg-look xdg-desktop-portal-hyprland-git qt5-svg inetutils \
 mpc mpd ncmpcpp xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects qt5-quickcontrols2 \
@@ -49,21 +49,10 @@ cp -a .config ~/
 cp -a .local ~/
 ```
 
-### Download Debian non-free netinstall
-
-Use the following Debian ISO as the base <https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/weekly-builds/amd64/iso-cd/>
-
-*do NOT grab the EDU download and this includes non-free and firmware*
-
-
-## To Install
-
-
-    git clone https://github.com/wildan-pratama/wildan-hyprland.git
-    cd wildan-hyprland
-
-    ./install.sh
-   
+## Note
+- Recommend archinstall with Sway as desktop for base
+- Don't forget to enable and set sddm as defautl display manager
+- After selecting theme you must open `GTK Setting` from launcher and just `Apply` button to apply gtk2 theme
 
 ## Tutorial for sway-wm settings:
 
