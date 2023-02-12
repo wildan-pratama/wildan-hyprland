@@ -4,6 +4,7 @@
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)]()
 
+
 ## Requirements
 You need install yay first
 
