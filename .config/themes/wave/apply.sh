@@ -120,19 +120,19 @@ apply_dunst() {
 		timeout = 2
 		background = "${element_bg}"
 		foreground = "${element_fg}"
-		frame_color = "${altbackground}"
+		frame_color = "${color7}"
 
 		[urgency_normal]
 		timeout = 5
 		background = "${element_bg}"
 		foreground = "${element_fg}"
-		frame_color = "${altbackground}"
+		frame_color = "${color7}"
 
 		[urgency_critical]
 		timeout = 0
 		background = "${element_bg}"
 		foreground = "${color1}"
-		frame_color = "${color1}"
+		frame_color = "${color7}"
 	_EOF_
 
 	# restart dunst

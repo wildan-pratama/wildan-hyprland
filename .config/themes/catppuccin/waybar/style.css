@@ -33,7 +33,6 @@
 	border-radius: 5px;
 	background: transparent;
     color: #516079;
-    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
 
 #memory {
@@ -42,6 +41,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
 
 #workspaces button {
@@ -74,16 +74,11 @@
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
     animation: gradient 20s ease infinite;
     font-weight: bolder;
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
 
 #battery.charging, #battery.plugged {
     background-color: #94e2d5 ;
-}
-
-#battery {
-    background-color: #fff;
-    color:#a6e3a1;
-    font-weight: bolder;
 }
 
 @keyframes blink {
@@ -110,22 +105,26 @@
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
     /* background-color: #b4befe; */
     color: 	#fff;
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
 
 #memory {
     background-color: #cba6f7;
     color: 	#9a75c7;
     font-weight: bolder;
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
 
 #disk {
     background: rgb(255,255,255);
 	background: linear-gradient(60deg, rgba(255,255,255,1) 0%, rgba(148,183,224,1) 100%);
+	box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
 
 #network{
     background: rgb(166,227,161);
 	background: linear-gradient(60deg, rgba(166,227,161,1) 0%, rgba(144,211,230,1) 100%);
+	box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
 
 #pulseaudio {
@@ -133,11 +132,13 @@
 	background: linear-gradient(60deg, rgba(250,179,135,1) 0%, rgba(166,227,161,1) 100%);
     color: #bf7d54;
     font-weight: bolder;
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
 
 #tray {
     background: rgb(106,177,219);
 	background: linear-gradient(60deg, rgba(106,177,219,1) 0%, rgba(232,154,175,1) 100%);
+	box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
 
 #tray > .passive {
@@ -152,16 +153,19 @@
     background: rgb(98,169,233);
 	background: linear-gradient(60deg, rgba(250,179,135,1) 0%, rgba(98,169,233,1) 100%);
     color: #2a5c45;
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
 
 #backlight {
     background: rgb(98,169,233);
 	background: linear-gradient(60deg, rgba(98,169,233,1) 0%, rgba(250,179,135,1) 100%);
     color: #2a5c45;
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
 
 #battery {
     background: rgb(148,183,224);
 	background: linear-gradient(60deg, rgba(148,183,224,1) 0%, rgba(218,176,241,1) 100%);
     color: #90b1b1;
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
 }
