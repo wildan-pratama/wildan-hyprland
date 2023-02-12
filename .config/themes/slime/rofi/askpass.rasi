@@ -67,7 +67,6 @@ entry {
     background-color:            @background;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Password";
     placeholder-color:           inherit;
 }
 

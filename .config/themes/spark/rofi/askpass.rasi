@@ -65,7 +65,6 @@ entry {
     background-color:            @background-alt;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Password";
     placeholder-color:           inherit;
 }
 

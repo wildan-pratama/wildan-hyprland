@@ -6,9 +6,9 @@
     "fixed-center": true,
     
     // Choose the order of the modules
-    "modules-left": ["clock", "mpd"],
-    "modules-center": ["wlr/workspaces"],
-    "modules-right": ["battery", "backlight", "network", "pulseaudio", "tray"],
+    "modules-left": ["wlr/workspaces","mpd"],
+    "modules-center": ["cpu", "memory", "disk"],
+    "modules-right": ["battery", "backlight", "network", "pulseaudio", "clock", "tray"],
     
     // Modules configuration
     "wlr/workspaces": {	
@@ -19,14 +19,14 @@
 		"format": "{icon}",
 		"on-click": "activate",
 		"format-icons": {
-			"active": "<span color=\"#42a5f5\"></span>",
-		"default": ""
+			"active": "<span color=\"#ba0cd8\">ﰉ</span>",
+		"default": "ﰊ"
 		},
 	"sort-by-number": true
 	},
 	
     "mpd": {
-        "format": "<span color=\"#b4a1db\"></span> {title} - {artist}",
+        "format": "<span color=\"#b4a1db\"> </span> {title} - {artist}",
         "format-disconnected": "Disconnected",
         "format-stopped": "Stopped",
         "max-length": 50,
@@ -38,6 +38,24 @@
         // "icon-size": 21,
         "spacing": 10
     },
+    
+    "cpu": {
+		"interval": 10,
+		"format": "{}% <span color=\"#ffe744\"></span>",
+		"max-length": 10
+	},
+    
+    "memory": {
+		"interval": 30,
+		"format": "{}% <span color=\"#51b4ff\">﬙</span>",
+		"max-length": 10
+	},
+	
+	"disk": {
+		"interval": 30,
+		"format": "{percentage_used}% <span color=\"#ba68c8\"></span>",
+		"path": "/"
+	},
     
     "clock": {
         "format": "<span color=\"#75dbe1\"> </span> {:%H:%M}",

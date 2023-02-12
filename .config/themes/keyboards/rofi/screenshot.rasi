@@ -12,18 +12,18 @@ configuration {
 @import                          "shared/fonts.rasi"
 
 /*
-USE_ICON=NO
+USE_ICON=YES
 */
 
 /*****----- Main Window -----*****/
 window {
     transparency:                "real";
-    location:                    center;
-    anchor:                      center;
+    location:                    southeast;
+    anchor:                      southeast;
     fullscreen:                  false;
-    width:                       300px;
-    x-offset:                    0px;
-    y-offset:                    0px;
+    width:                       400px;
+    x-offset:                    -12px;
+    y-offset:                    -50px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -40,13 +40,13 @@ mainbox {
     margin:                      0px;
     padding:                     20px;
     background-color:            transparent;
-    children:                    [ "inputbar", "message", "listview" ];
+    children:                    [ "inputbar", "listview", "message" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    spacing:                     0px;
+    spacing:                     10px;
     padding:                     0px;
     border:                      0px;
     border-radius:               0px;
@@ -60,14 +60,14 @@ textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "";
-    padding:                     10px 12px;
+    padding:                     5px 0px;
     border-radius:               0px;
-    background-color:            @urgent;
-    text-color:                  @background;
+    background-color:            @background;
+    text-color:                  @selected;
 }
 prompt {
     enabled:                     true;
-    padding:                     10px;
+    padding:                     5px 0px;
     border-radius:               0px;
     background-color:            @background;
     text-color:                  @foreground;
@@ -77,9 +77,9 @@ prompt {
 message {
     enabled:                     true;
     margin:                      0px;
-    padding:                     10px;
+    padding:                     15px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               0%;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -88,19 +88,19 @@ textbox {
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0.5;
 }
 
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
-    lines:                       1;
+    columns:                     3;
+    lines:                       2;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
     
-    spacing:                     5px;
+    spacing:                     10px;
     background-color:            transparent;
     cursor:                      "default";
 }
@@ -108,25 +108,26 @@ listview {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    padding:                     10px;
+    padding:                     30px 10px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               0%;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;
 }
 element-text {
+    font:                        "feather 28";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0.5;
 }
 
 element normal.normal,
 element alternate.normal {
-    background-color:            var(background);
+    background-color:            var(background-alt);
     text-color:                  var(foreground);
 }
 element normal.urgent,
