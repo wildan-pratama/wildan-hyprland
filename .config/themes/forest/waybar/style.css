@@ -39,7 +39,17 @@
     animation-direction: alternate;
 }
 
-#tray,
+#tray {
+	font-weight: bold; /* Somewhy the bar-wide setting is ignored*/
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    border-radius: 2px;
+    background: #D8DEE9;
+    color: #314049;
+    font-size: 0.9em;
+    margin: 1px 3px;
+	}
+
 #workspaces button {
     font-weight: bold; /* Somewhy the bar-wide setting is ignored*/
     padding: 0;
@@ -47,6 +57,7 @@
     color: #D8DEE9;
     font-size: 0.9em;
 }
+
 #workspaces button.active {
     background: #D8DEE9;
     color: #314049;

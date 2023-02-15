@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/themes"
-STYLE="adaptive"
+STYLE="forest"
 RASI="$DIR/$STYLE/rofi/recording.rasi"
 time=`date +%Y-%m-%d-%H-%M-%S`
 dir="Videos/Screencasts"
