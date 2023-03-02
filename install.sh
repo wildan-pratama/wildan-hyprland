@@ -13,5 +13,7 @@ sudo cp -r usr /
 sudo cp -r etc /
 cp -r .config ~/
 cp -r .local ~/
+cp -r .icons ~/
+cp -r .gtkrc-2.0 ~/
 
 sudo systemctl enable sddm

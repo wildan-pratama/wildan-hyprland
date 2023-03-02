@@ -32,7 +32,7 @@ light_value='0.64'
 dark_value='0.08'
 
 # Rofi
-rofi_icon='Papirus-Apps'
+rofi_icon='Zafiro'
 
 # Terminal
 terminal_font_name='JetBrainsMono Nerd Font'
@@ -45,9 +45,9 @@ geany_font='JetBrains Mono 10'
 
 # Appearance
 gtk_font='Noto Sans 9'
-gtk_theme='Catppuccin-Mocha'
-icon_theme='Luv-Folders'
-cursor_theme='Vimix'
+gtk_theme='Arc-Dark'
+icon_theme='Zafiro'
+cursor_theme='Qogirr'
 
 # Dunst
 dunst_width='300'

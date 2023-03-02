@@ -87,11 +87,23 @@ apply_geany() {
 # Appearance --------------------------------
 apply_appearance() {
 	# apply gtk theme, icons, cursor & fonts
+	gsettings set org.gnome.desktop.interface gtk-theme "$gtk_theme"
+	gsettings set org.gnome.desktop.interface icon-theme "$icon_theme"
+	gsettings set org.gnome.desktop.interface font-name "$gtk_font"
+	gsettings set org.gnome.desktop.interface cursor-theme "$cursor_theme"
+	
 	sed -i ${PATH_GTK}/gsettings \
 		-e "s/gtk-theme=.*/gtk-theme=$gtk_theme/g" \
 		-e "s/icon-theme=.*/icon-theme=$icon_theme/g" \
 		-e "s/font-name=.*/font-name=$gtk_font/g" \
 		-e "s/cursor-theme=.*/cursor-theme=$cursor_theme/g"
+	
+	sed -i "$HOME"/.gtkrc-2.0 \
+		-e "s/gtk-theme-name=.*/gtk-theme-name=\"$gtk_theme\"/g" \
+		-e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=\"$icon_theme\"/g" \
+		-e "s/gtk-font-name=.*/gtk-font-name=\"$gtk_font\"/g" \
+		-e "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=\"$cursor_theme\"/g"
+		
 	nwg-look -a
 	
 	# inherit cursor theme
