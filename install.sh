@@ -1,5 +1,7 @@
 #!/bin/sh
 
+git pull origin main
+
 yay -Syy oconfirm git sddm-git polkit hyprland-bin waybar-hyprland-git alacritty rofi-lbonn-wayland-git nemo gvfs-mtp swayidle \
 file-roller swaybg swaylock-effects-git wl-clipboard mailcap mpv networkmanager-dmenu-git wf-recorder bc gtk-engine-murrine \
 xfce-polkit dunst geany viewnior nwg-look xdg-desktop-portal-hyprland-git qt5-svg inetutils pamixer bluez-utils\
