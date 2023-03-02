@@ -3,7 +3,7 @@
     font-family: "Iosevka Nerd Font";
     border: none;
     min-height: 0;
-    margin: 1px 3px;
+    margin: 2px 3px;
 }
 
 #waybar {
@@ -24,8 +24,10 @@
 #tray,
 #mpd,
 #disk,
+#submap,
 #battery,
 #backlight,
+#custom-recording,
 #workspaces {
     padding-left: 0.6em;
     padding-right: 0.6em;
@@ -48,7 +50,9 @@
 	background-color: #314049;	
 }
 
+#custom-recording,
 #network,
+#submap,
 #workspaces {
    background: #374950;
 }

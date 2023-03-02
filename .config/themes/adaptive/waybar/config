@@ -1,11 +1,11 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 30, // Waybar height (to be removed for auto height
     "fixed-center": true,
     
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "cpu", "memory", "disk"],
+    "modules-left": ["wlr/workspaces", "custom/recording", "hyprland/submap", "cpu", "memory", "disk" ],
     "modules-center": ["mpd"],
     "modules-right": ["battery", "backlight", "pulseaudio", "network", "clock", "tray"],
     
@@ -30,7 +30,8 @@
         "format-stopped": "Stopped",
         "max-length": 50,
         "on-click": "~/.config/rofi/bin/music",
-        "on-click-right": "alacritty -e ncmpcpp"
+        "on-click-right": "alacritty -e ncmpcpp",
+        "tooltip": false
     },
     
     "tray": {
@@ -107,7 +108,25 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "<span color=\"#51b4ff\">{icon}</span> {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", ""]
-    }
+        "format-icons": ["", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-"
+    },
+    
+    "hyprland/submap": {
+		"format": "Resize Window",
+		"max-length": 15,
+		"on-click": "hyprctl dispatch submap reset",
+		"tooltip": false
+	},
+	
+	"custom/recording": {
+		"exec": "~/.config/hypr/bin/recording status",
+		"format": "{}",
+		"on-click": "~/.config/hypr/bin/recording stop",
+		"restart-interval": 1,
+		"return-type": "json",
+		"tooltip": false
+	}
 }
 

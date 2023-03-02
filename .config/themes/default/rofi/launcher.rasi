@@ -59,7 +59,10 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
+    border:                      2px solid;
     cursor:                      "default";
+    border-color:                @border-colour;
+    border-radius:               10px;
     /* Backgroud Colors */
     background-color:            @background-colour;
     /* Backgroud Image */

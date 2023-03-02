@@ -2,7 +2,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Iosevka, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     /*border-radius: 5px;*/
-    margin: 1px 2px;
+    margin: 2px 2px;
     min-height: 0;
 }
 
@@ -23,11 +23,13 @@
 #memory,
 #network,
 #pulseaudio,
+#submap,
 #tray,
 #mpd,
 #disk,
 #battery,
 #backlight,
+#custom-recording,
 #workspaces {
     padding-left: 0.7em;
     padding-right: 0.7em;

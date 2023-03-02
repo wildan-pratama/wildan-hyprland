@@ -1,13 +1,13 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 30, // Waybar height (to be removed for auto height
     "fixed-center": true,
     
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "cpu", "memory", "disk"],
+    "modules-left": ["wlr/workspaces", "hyprland/submap", "cpu", "memory", "disk"],
     "modules-center": ["clock", "mpd"],
-    "modules-right": ["backlight",  "battery", "pulseaudio", "network", "tray"],
+    "modules-right": ["backlight",  "battery", "pulseaudio", "network", "custom/recording", "tray"],
     
     // Modules configuration
    
@@ -110,7 +110,26 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "<span color=\"#51b4ff\">{icon}</span> {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", ""]
-    }
+        "format-icons": ["", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-"
+    },
+    
+    "hyprland/submap": {
+		"format": "✌️ Resize",
+		"max-length": 15,
+		"on-click": "hyprctl dispatch submap reset",
+		"tooltip": false
+	},
+	
+	"custom/recording": {
+		"exec": "~/.config/hypr/bin/recording status",
+		"format": "{}",
+		"on-click": "~/.config/hypr/bin/recording stop",
+		"restart-interval": 1,
+		"return-type": "json",
+		"tooltip": false
+	}
+
 }
 

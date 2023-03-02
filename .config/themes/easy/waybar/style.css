@@ -3,7 +3,7 @@
     font-family: "Iosevka Nerd Font";
     border: none;
     min-height: 0;
-    margin: 1px 3px;
+    margin: 3px 3px;
 }
 
 #waybar {
@@ -23,14 +23,16 @@
 #pulseaudio,
 #tray,
 #mpd,
+#submap,
 #disk,
 #battery,
 #backlight,
+#custom-recording,
 #workspaces {
     padding-left: 0.7em;
     padding-right: 0.7em;
     color: #D8DEE9;
-    margin: 1px 2px;
+    margin: 2px 2px;
     background: #383c4a;
 	border-radius: 5px;
 }

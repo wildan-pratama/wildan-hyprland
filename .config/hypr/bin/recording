@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# $XDG_CONFIG_HOME/waybar/scripts/recording.sh
+
+time=`date +%Y-%m-%d-%H-%M-%S`
+dir="Videos/Screencasts"
+RASI="$DIR/$STYLE/rofi/recording.rasi"
+pid="$HOME/$dir/process.pid"
+log="$HOME/$dir/screencasts.log"
+WF_RECORDER_OPTS=""
+
+if [ "$1" == "status" ];
+then
+	if [ -f "$pid" ];
+	then
+		echo '{"text":"Recording Screen"}'
+	else
+		echo ''
+	fi
+	exit
+elif [ "$1" == "stop" ];
+then
+	sed -i ${RASI} -e "s/lines: .*/lines:                       4\;/g"
+	dunstify -t 1000 -h string:x-dunst-stack-tag:obscreenshot -i /usr/share/icons/dunst/video.png "Record Stop."
+	pkill -2 wf-recorder
+	rm "$log" "$pid"
+else
+	printf "Argument %s not valid" "$1"
+fi

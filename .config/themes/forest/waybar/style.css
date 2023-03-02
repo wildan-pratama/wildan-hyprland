@@ -3,7 +3,7 @@
     font-family: "Iosevka Nerd Font";
     border: none;
     min-height: 0;
-    margin: 1px 3px;
+    margin: 2px 3px;
 }
 
 #waybar {
@@ -25,6 +25,7 @@
 #mpd,
 #disk,
 #battery,
+#submap,
 #backlight,
 #workspaces {
     padding-left: 0.6em;

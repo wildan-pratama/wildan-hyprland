@@ -1,0 +1,122 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules (4px)
+    "fixed-center": true,
+    "margin-top": 5,
+    "margin-left": 80,
+    "margin-right": 80,
+    
+    // Choose the order of the modules
+    "modules-left": ["wlr/workspaces", "mpd"],
+    // "modules-center": [],
+    "modules-right": ["pulseaudio", "battery", "backlight", "network", "hyprland/submap", "custom/recording", "tray", "clock"],
+    
+    // Modules configuration
+    // Modules configuration
+	"wlr/workspaces": {	
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+        "all-outputs": true,
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"active": "<span color=\"#262626\">綠</span>",
+			"default": "<span color=\"#262626\">祿</span>"
+		},
+	"sort-by-number": true
+	},
+	
+    "mpd": {
+        "format": " {title} - {artist}",
+        "format-disconnected": "Disconnected",
+        "on-click": "~/.config/rofi/bin/music",
+        "max-length": 50,
+        "format-stopped": "Stopped",
+        "on-click-right": "alacritty -e ncmpcpp"
+    },
+    
+    "tray": {
+        "spacing": 10
+    },
+    
+    "clock": {
+        // "timezone": "America/New_York",
+        "format": " {:%H:%M}",
+        "tooltip-format": " <big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "<span color=\"#819400\"></span> {:%Y-%m-%d}"
+    },
+    
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-"
+    },
+    
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "<span color=\"#696ebf\"></span> {capacity}%",
+        "format-plugged": "<span color=\"#696ebf\"></span> {capacity}%",
+        "format-alt": "<span color=\"#696ebf\">{icon}</span> {time}",
+        "format-icons": ["", "", "", "", ""]
+    },
+  
+    "network": {
+		"restart-interval": 1,
+        "format-wifi": "直 {essid} {bandwidthUpBits}, {bandwidthDownBits}",
+        "format-ethernet": "歷 {ifname} {bandwidthUpBits}, {bandwidthDownBits}",
+        "format-linked": "歷 {ifname} {bandwidthUpBits}, {bandwidthDownBits}",
+        "format-disconnected": "轢 Disconected",
+        "family": "ipv4",
+        "on-click": "~/.config/rofi/bin/network_menu",
+        "on-click-right": "nm-connection-editor"
+    },
+    
+    "pulseaudio": {
+        "scroll-step": 3, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-bluetooth-muted": "婢 {icon}",
+        "format-muted": "婢 MUTE",
+        "format-source": "<span color=\"#b08500\">{icon}</span> {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": ["奄", "奄", "", "", "", ""]
+        },
+        "on-double-click": "pavucontrol",
+        "on-click": "pulsemixer --unmute",
+        "on-click-right": "pulsemixer --mute"
+    },
+    
+    "hyprland/window": {
+		"format": "{}",
+		"max-length": 50,
+		"separate-outputs": true
+	},
+	
+	"hyprland/submap": {
+		"format": "Resize",
+		"max-length": 15,
+		"on-click": "hyprctl dispatch submap reset",
+		"tooltip": false
+	},
+	
+	"custom/recording": {
+		"exec": "~/.config/hypr/bin/recording status",
+		"format": "{}",
+		"on-click": "~/.config/hypr/bin/recording stop",
+		"restart-interval": 1,
+		"return-type": "json",
+		"tooltip": false
+	}
+}
+

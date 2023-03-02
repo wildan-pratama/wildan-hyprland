@@ -59,7 +59,8 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border-radius:               0px;
+    border:                      2px solid;
+    border-radius:               10px;
     border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */

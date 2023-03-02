@@ -7,6 +7,33 @@ configuration {
     show-icons:                 false;
 }
 
+* {
+    border-colour:               var(selected);
+    handle-colour:               var(selected);
+    background-colour:           var(background);
+    foreground-colour:           var(foreground);
+    alternate-background:        var(background-alt);
+    normal-background:           var(background);
+    normal-foreground:           var(foreground);
+    urgent-background:           var(urgent);
+    urgent-foreground:           var(background);
+    active-background:           var(active);
+    active-foreground:           var(background);
+    selected-normal-background:  var(selected);
+    selected-normal-foreground:  var(background);
+    selected-urgent-background:  var(active);
+    selected-urgent-foreground:  var(background);
+    selected-active-background:  var(urgent);
+    selected-active-foreground:  var(background);
+    alternate-normal-background: var(background);
+    alternate-normal-foreground: var(foreground);
+    alternate-urgent-background: var(urgent);
+    alternate-urgent-foreground: var(background);
+    alternate-active-background: var(active);
+    alternate-active-foreground: var(background);
+}
+
+
 /*****----- Global Properties -----*****/
 @import                          "shared/colors.rasi"
 @import                          "shared/fonts.rasi"
@@ -26,8 +53,11 @@ window {
     y-offset:                    0px;
     margin:                      0px;
     padding:                     0px;
+    border:                      2px;
+    border-radius:               10px;
     cursor:                      "default";
     background-color:            @background;
+    border-color:                @border-colour;
 }
 
 /*****----- Main Box -----*****/

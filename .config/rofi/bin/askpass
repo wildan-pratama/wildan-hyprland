@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/themes"
-STYLE="forest"
+STYLE="default"
 RASI="$DIR/$STYLE/rofi/askpass.rasi"
 
 # Rofi text dialog to get password

@@ -71,6 +71,10 @@ window {
     //background-image:          linear-gradient(to bottom, pink, yellow, magenta);
     /* Angle Linear Gradient */
     //background-image:          linear-gradient(45, cyan, purple, indigo);
+    border:                      2px solid;
+    border-radius:               8px;
+    border-color:                @selected;
+    
 }
 
 /*****----- Main Box -----*****/

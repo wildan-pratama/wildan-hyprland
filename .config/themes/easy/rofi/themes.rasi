@@ -59,8 +59,9 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border-radius:               0px;
-    border-color:                @border-colour;
+    border:                      2px solid;
+    border-radius:               8px;
+    border-color:                @selected;
     cursor:                      "default";
     /* Backgroud Colors */
     background-color:            @background-colour;

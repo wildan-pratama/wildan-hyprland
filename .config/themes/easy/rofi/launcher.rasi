@@ -29,6 +29,10 @@ window {
     padding:                     0px;
     background-color:            @background;
     cursor:                      "default";
+    border:                      2px solid;
+    border-radius:               8px;
+    border-color:                @selected;
+    
 }
 
 /*****----- Main Box -----*****/

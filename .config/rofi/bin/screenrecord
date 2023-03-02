@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/themes"
-STYLE="forest"
+STYLE="default"
 RASI="$DIR/$STYLE/rofi/recording.rasi"
 time=`date +%Y-%m-%d-%H-%M-%S`
 dir="Videos/Screencasts"
@@ -15,7 +15,7 @@ pid="$HOME/$dir/process.pid"
 
 # Theme Elements
 prompt='Screen Record'
-if [[ -e "$pid" ]]; then
+if [[ -f "$pid" ]]; then
 	mesg='is recording the screen'
 else
 	mesg='is not recording the screen'
@@ -38,7 +38,7 @@ rofi_cmd() {
 }
 
 # Pass variables to rofi dmenu
-if [[ -e "$pid" ]]; then
+if [[ -f "$pid" ]]; then
 	sed -i ${RASI} -e "s/lines: .*/lines:                       1\;/g"
 	opt="$option_1"
 else	

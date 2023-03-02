@@ -1,4 +1,4 @@
-# Hyprland with 11 themes on Arch linux
+# Hyprland with beautifull themes on Arch linux
 
 **Wildan Pratama**
 
@@ -33,21 +33,21 @@ Or you can install manualy with this step
 ### Packages
 
 ``` bash
-yay -S git sddm-git polkit hyprland-bin waybar-hyprland alacritty rofi nemo gvfs-mtp swayidle \
-file-roller swaybg swaylock-effects-git wl-clipboard mailcap mpv networkmanager-dmenu-git \
-xfce-polkit dunst geany viewnior nwg-look xdg-desktop-portal-hyprland-git qt5-svg inetutils \
-mpc mpd ncmpcpp xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects qt5-quickcontrols2 \
-pipewire wireplumber grim slurp jq dunst qt5-wayland qt6-wayland
+yay -S git sddm-git polkit hyprland-bin waybar-hyprland-git alacritty rofi-lbonn-wayland-git nemo gvfs-mtp swayidle \
+file-roller swaybg swaylock-effects-git wl-clipboard mailcap mpv networkmanager-dmenu-git wf-recorder bc gtk-engine-murrine \
+xfce-polkit dunst geany viewnior nwg-look xdg-desktop-portal-hyprland-git qt5-svg inetutils pamixer bluez-utils\
+mpc mpd ncmpcpp xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects qt5-quickcontrols2 brightnessctl \
+pipewire wireplumber grim slurp jq dunst qt5-wayland qt6-wayland pastel 
 ```
 
 ### Copy Configuration and stuff
 
 ``` bash
 cd wildan-hyprland
-sudo cp -a usr /
-sudo cp -a etc /
-cp -a .config ~/
-cp -a .local ~/
+sudo cp -r usr /
+sudo cp -r etc /
+cp -r .config ~/
+cp -r .local ~/
 ```
 
 ## Note
@@ -80,11 +80,13 @@ Main shortcuts: `~/.config/hypr/keybind.conf`
  - <kbd>MOD</kbd>+<kbd>D</kbd>= open Launcher (rofi)
  - <kbd>MOD</kbd>+<kbd>Q</kbd> = close focused app [kill]
  - <kbd>MOD</kbd>+<kbd>S</kbd> = screenshot/bring up screenshot menu
+ - <kbd>MOD</kbd>+<kbd>R</kbd> = screenrecord/bring up screenrecord menu
  - <kbd>MOD</kbd>+<kbd>X</kbd> = power-menu
  - <kbd>MOD</kbd>+<kbd>SPACE</kbd>  = float window
  - <kbd>MOD</kbd>+<kbd>HOLD DOWN</kbd> = drag floating window
  - <kbd>MOD</kbd>+<kbd>↑ ↓ → ←</kbd>  = switch focus respectively 
  - <kbd>MOD</kbd>+<kbd>N</kbd> = open network manager
  - <kbd>MOD</kbd>+<kbd>M</kbd> = open mpd controller
- - <kbd>MOD</kbd>+<kbd>R</kbd> = open root menu
+ - <kbd>MOD</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> = open root menu
+ - <kbd>MOD</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd> = submmap/resize window
  

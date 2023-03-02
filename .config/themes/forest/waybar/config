@@ -5,7 +5,7 @@
     "fixed-center": true,
     
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "cpu", "memory", "disk"],
+    "modules-left": ["wlr/workspaces", "hyprland/submap", "cpu", "memory", "disk"],
     "modules-center": ["mpd"],
     "modules-right": ["battery", "backlight", "pulseaudio", "network", "clock", "tray"],
     
@@ -58,18 +58,12 @@
 	},
 
     "network": {
-        // "interface": "wlan0", // (Optional) To force the use of this interface,
-        "format-wifi": "歷 {essid}",
-        // "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-ethernet": "{ifname} 歷",
-        // "format-linked": "{ifname} (No IP) ",
-        "format-linked": "{ifname} 歷",
+        "interval": "0.1",
+        "format-wifi": "直 {essid} {bandwidthUpBits}, {bandwidthDownBits}",
+        "format-ethernet": "歷 {ifname} {bandwidthUpBits}, {bandwidthDownBits}",
+        "format-linked": "歷 {ifname} {bandwidthUpBits}, {bandwidthDownBits}",
         "format-disconnected": "轢 Disconected",
-        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        // "format-alt": "歷 {ifname}",
         "family": "ipv4",
-        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
         "on-click": "~/.config/rofi/bin/network_menu"
     },
     
@@ -106,7 +100,16 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", ""]
-    }
+        "format-icons": ["", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-"
+    },
+    
+    "hyprland/submap": {
+    "format": "Resize ✌",
+    "max-length": 15,
+    "on-click": "hyprctl dispatch submap reset",
+    "tooltip": false
+	}
 }
 

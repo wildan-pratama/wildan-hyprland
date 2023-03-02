@@ -26,6 +26,9 @@ window {
     y-offset:                    0px;
     margin:                      0px;
     padding:                     0px;
+    border:                      2px solid;
+    border-radius:               4px;
+    border-color:                @selected;
     cursor:                      "default";
     background-color:            @background;
 }

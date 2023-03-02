@@ -3,7 +3,7 @@
     font-family: "JetBrains Mono";
     border: none;
     min-height: 0;
-    margin: 1px 3px;
+    margin: 2px 3px;
 }
 
 #waybar {
@@ -19,6 +19,7 @@
 #clock,
 #cpu,
 #memory,
+#submap,
 #network,
 #pulseaudio,
 #tray,
@@ -26,6 +27,7 @@
 #disk,
 #battery,
 #backlight,
+#custom-recording,
 #workspaces {
     padding-left: 0.6em;
     padding-right: 0.6em;
@@ -33,7 +35,9 @@
     margin: 1px 2px;
 }
 
+#custom-recording,
 #mpd,
+#submap,
 #clock,
 #tray,
 #workspaces {

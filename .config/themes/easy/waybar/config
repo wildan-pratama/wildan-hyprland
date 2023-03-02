@@ -1,14 +1,14 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 32, // Waybar height (to be removed for auto height)
+    "height": 30, // Waybar height (to be removed for auto height
     "spacing": 4, // Gaps between modules (4px)
     "fixed-center": true,
     
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces", "hyprland/window"],
     // "modules-center": [],
-    "modules-right": ["mpd", "pulseaudio", "network", "cpu", "memory", "backlight", "disk", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["custom/recording", "hyprland/submap", "mpd", "backlight", "pulseaudio", "network", "cpu", "memory", "disk", "battery", "clock", "tray"],
     
     // Modules configuration
     "wlr/workspaces": {
@@ -17,17 +17,7 @@
         "on-scroll-up": "hyprctl dispatch workspace e+1",
 		"on-scroll-down": "hyprctl dispatch workspace e-1",
         "on-click": "activate",
-        "format": "{icon}",
-         "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
-             "5": "",
-             "urgent": "",
-             "focused": "",
-             "default": ""
-         }
+        "format": "{icon}"
      },
     
     "disk": {
@@ -69,7 +59,9 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-"
     },
     
     "battery": {
@@ -88,7 +80,7 @@
     },
     
     "network": {       
-        "format-wifi": "{essid} ({signalStrength}%) <span color=\"#C778DD\"></span>",
+        "format-wifi": "{essid} <span color=\"#C778DD\"></span>",
         "format-ethernet": "{ipaddr}/{cidr} <span color=\"#C778DD\"></span>",
         "tooltip-format": "{ifname} via {gwaddr} <span color=\"#C778DD\"></span>",
         "format-linked": "{ifname} (No IP) <span color=\"#C778DD\"></span>",
@@ -118,6 +110,23 @@
 		"format": "{}",
 		"max-length": 50,
 		"separate-outputs": true
+	},
+	
+	"hyprland/submap": {
+		"format": "Resize ✌",
+		"max-length": 15,
+		"on-click": "hyprctl dispatch submap reset",
+		"tooltip": false
+	},
+	
+	"custom/recording": {
+		"exec": "~/.config/hypr/bin/recording status",
+		"format": "{}",
+		"on-click": "~/.config/hypr/bin/recording stop",
+		"restart-interval": 1,
+		"return-type": "json",
+		"tooltip": false
 	}
+
 }
 
