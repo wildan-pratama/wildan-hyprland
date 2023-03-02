@@ -2,7 +2,7 @@
 
 git pull origin main
 
-yay -Syy --noconfirm git sddm-git polkit hyprland-bin waybar-hyprland-git alacritty rofi-lbonn-wayland-git nemo gvfs-mtp swayidle \
+yay -Syy git sddm-git polkit hyprland-bin waybar-hyprland-git alacritty rofi-lbonn-wayland-git nemo gvfs-mtp swayidle \
 file-roller swaybg swaylock-effects-git wl-clipboard mailcap mpv networkmanager-dmenu-git wf-recorder bc gtk-engine-murrine \
 xfce-polkit dunst geany viewnior nwg-look xdg-desktop-portal-hyprland-git qt5-svg inetutils pamixer bluez-utils \
 mpc mpd ncmpcpp xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects qt5-quickcontrols2 brightnessctl \
