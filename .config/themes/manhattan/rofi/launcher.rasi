@@ -51,15 +51,15 @@ window {
     location:                    southwest;
     anchor:                      southwest;
     fullscreen:                  false;
-    width:                       400px;
-    height:                      400px;
-    x-offset:                    12px;
-    y-offset:                    -50px;
+    width:                       600px;
+    x-offset:                    10px;
+    y-offset:                    -20px;
 
     /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
+    border:                      1px solid;
     border-radius:               0px;
     border-color:                @border-colour;
     cursor:                      "default";
@@ -78,26 +78,26 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     0px;
+    spacing:                     10px;
     margin:                      0px;
     padding:                     20px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
     background-color:            transparent;
-    children:                    [ "inputbar", "message", "mode-switcher", "listview" ];
+    children:                    [ "inputbar", "mode-switcher", "message", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    margin:                      0px 0px 10px 0px;
-    padding:                     5px 10px;
+    margin:                      0px;
+    padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
-    background-color:            @alternate-background;
+    background-color:            transparent;
     text-color:                  @foreground-colour;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
@@ -113,7 +113,7 @@ textbox-prompt-colon {
     expand:                      false;
     str:                         "";
     background-color:            inherit;
-    text-color:                  inherit;
+    text-color:                  @urgent;
 }
 entry {
     enabled:                     true;
@@ -153,7 +153,7 @@ case-indicator {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       8;
+    lines:                       6;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -164,9 +164,9 @@ listview {
     
     spacing:                     5px;
     margin:                      0px;
-    padding:                     10px;
-    border:                      0px 1px 1px 1px ;
-    border-radius:               0px 0px 0px 0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
     border-color:                @border-colour;
     background-color:            transparent;
     text-color:                  @foreground-colour;
@@ -184,7 +184,7 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     6px;
+    padding:                     8px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
@@ -247,7 +247,7 @@ element-text {
 mode-switcher{
     enabled:                     true;
     expand:                      false;
-    spacing:                     0px;
+    spacing:                     10px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -258,38 +258,33 @@ mode-switcher{
 }
 button {
     padding:                     10px;
-    border:                      0px 0px 1px 0px ;
-    border-radius:               10px 10px 0px 0px;
+    border:                      0px solid;
+    border-radius:               0px;
     border-color:                @border-colour;
-    background-color:            @background-colour;
+    background-color:            @alternate-background;
     text-color:                  inherit;
     cursor:                      pointer;
 }
 button selected {
-    border:                      1px 1px 0px 1px ;
-    border-radius:               0px 0px 0px 0px;
-    border-color:                @border-colour;
-    background-color:            var(normal-background);
-    text-color:                  var(normal-foreground);
+    background-color:            var(selected-normal-background);
+    text-color:                  var(selected-normal-foreground);
 }
 
 /*****----- Message -----*****/
 message {
     enabled:                     true;
-    margin:                      0px 0px 10px 0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px 0px 0px 0px;
-    border-color:                @border-colour;
-    background-color:            transparent;
-    text-color:                  @foreground-colour;
-}
-textbox {
+    margin:                      0px;
     padding:                     10px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
     background-color:            @alternate-background;
+    text-color:                  @foreground-colour;
+}
+textbox {
+    border:                      0px solid;
+    border-color:                @border-colour;
+    background-color:            transparent;
     text-color:                  @foreground-colour;
     vertical-align:              0.5;
     horizontal-align:            0.0;
@@ -299,9 +294,9 @@ textbox {
     markup:                      true;
 }
 error-message {
-    padding:                     10px;
+    padding:                     15px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               10px;
     border-color:                @border-colour;
     background-color:            @background-colour;
     text-color:                  @foreground-colour;

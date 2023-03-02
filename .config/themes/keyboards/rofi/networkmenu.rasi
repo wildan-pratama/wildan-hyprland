@@ -54,7 +54,7 @@ window {
     width:                       400px;
     height:                      400px;
     x-offset:                    -10px;
-    y-offset:                    -48px;
+    y-offset:                    -20px;
 
     /* properties for all widgets */
     enabled:                     true;
@@ -62,16 +62,11 @@ window {
     padding:                     0px;
     border-radius:               0px;
     cursor:                      "default";
-    /* Backgroud Colors */
-    background-color:            @background-colour;
-    /* Backgroud Image */
-    //background-image:          url("/path/to/image.png", none);
-    /* Simple Linear Gradient */
-    //background-image:          linear-gradient(red, orange, pink, purple);
-    /* Directional Linear Gradient */
-    //background-image:          linear-gradient(to bottom, pink, yellow, magenta);
-    /* Angle Linear Gradient */
-    //background-image:          linear-gradient(45, cyan, purple, indigo);
+    border:                      1px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    cursor:                      "default";
+    background-color:            @background;
 }
 
 /*****----- Main Box -----*****/

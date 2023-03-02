@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/themes"
-STYLE="default"
+STYLE="adaptive"
 RASI="$DIR/$STYLE/rofi/screenshot.rasi"
 
 # Theme Elements

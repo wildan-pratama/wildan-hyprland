@@ -23,7 +23,7 @@
     
     "clock": {
         "format": " {:%H:%M,%e %b}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip": false,
         "today-format": "<b>{}</b>"
     },
     
@@ -56,10 +56,18 @@
         // "format-alt": "{ifname}: {ipaddr}/{cidr}",
         // "format-alt": "歷 {ifname}",
         "family": "ipv4",
-        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
+        "tooltip": false,
         "on-click": "~/.config/rofi/bin/network_menu",
         "on-click-right": "nm-connection-editor"
-    }
+    },
+    
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-",
+		"tooltip": false
+    },
 }
 

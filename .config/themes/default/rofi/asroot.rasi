@@ -15,22 +15,49 @@ configuration {
 USE_ICON=YES
 */
 
+* {
+    border-colour:               var(selected);
+    handle-colour:               var(selected);
+    background-colour:           var(background);
+    foreground-colour:           var(foreground);
+    alternate-background:        var(background-alt);
+    normal-background:           var(background);
+    normal-foreground:           var(foreground);
+    urgent-background:           var(urgent);
+    urgent-foreground:           var(background);
+    active-background:           var(active);
+    active-foreground:           var(background);
+    selected-normal-background:  var(selected);
+    selected-normal-foreground:  var(background);
+    selected-urgent-background:  var(active);
+    selected-urgent-foreground:  var(background);
+    selected-active-background:  var(urgent);
+    selected-active-foreground:  var(background);
+    alternate-normal-background: var(background);
+    alternate-normal-foreground: var(foreground);
+    alternate-urgent-background: var(urgent);
+    alternate-urgent-foreground: var(background);
+    alternate-active-background: var(active);
+    alternate-active-foreground: var(background);
+}
+
+
 /*****----- Main Window -----*****/
 window {
     transparency:                "real";
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       600px;
     x-offset:                    0px;
     y-offset:                    0px;
     margin:                      0px;
     padding:                     0px;
     border:                      2px solid;
     border-radius:               10px;
-    border-color:                @selected;
     cursor:                      "default";
     background-color:            @background;
+    border-color:                @border-colour;
 }
 
 /*****----- Main Box -----*****/
@@ -38,7 +65,7 @@ mainbox {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     20px;
+    padding:                     30px;
     background-color:            transparent;
     children:                    [ "inputbar", "message", "listview" ];
 }
@@ -60,15 +87,15 @@ textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "";
-    padding:                     10px 12px;
-    border-radius:               0px;
+    padding:                     10px 14px;
+    border-radius:               100%;
     background-color:            @active;
     text-color:                  @background;
 }
 prompt {
     enabled:                     true;
     padding:                     10px;
-    border-radius:               0px;
+    border-radius:               20px;
     background-color:            @selected;
     text-color:                  @background;
 }
@@ -79,7 +106,7 @@ message {
     margin:                      0px;
     padding:                     10px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               12px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -94,7 +121,7 @@ textbox {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     5;
+    columns:                     6;
     lines:                       1;
     cycle:                       true;
     scrollbar:                   false;
@@ -110,7 +137,7 @@ element {
     enabled:                     true;
     padding:                     22px 10px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               12px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -127,10 +154,7 @@ element-text {
 
 element normal.normal,
 element alternate.normal {
-    border:                      1px solid;
-    border-radius:               0px;
-    border-color:                @selected;
-    background-color:            var(background);
+    background-color:            var(background-alt);
     text-color:                  var(foreground);
 }
 element normal.urgent,

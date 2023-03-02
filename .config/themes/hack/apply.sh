@@ -93,6 +93,13 @@ apply_appearance() {
 		-e "s/icon-theme=.*/icon-theme=$icon_theme/g" \
 		-e "s/font-name=.*/font-name=$gtk_font/g" \
 		-e "s/cursor-theme=.*/cursor-theme=$cursor_theme/g"
+	
+	sed -i "$HOME"/.gtkrc-2.0 \
+		-e "s/gtk-theme-name=.*/gtk-theme-name=\"$gtk_theme\"/g" \
+		-e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=\"$icon_theme\"/g" \
+		-e "s/gtk-font-name=.*/gtk-font-name=\"$gtk_font\"/g" \
+		-e "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=\"$cursor_theme\"/g"
+		
 	nwg-look -a
 	
 	# inherit cursor theme
@@ -100,6 +107,7 @@ apply_appearance() {
 		sed -i -e "s/Inherits=.*/Inherits=$cursor_theme/g" "$HOME"/.icons/default/index.theme
 	fi	
 }
+
 # Dunst -------------------------------------
 apply_dunst() {
 	# modify dunst config

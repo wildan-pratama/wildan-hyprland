@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/themes"
-STYLE="default"
+STYLE="adaptive"
 RASI="$DIR/$STYLE/rofi/recording.rasi"
 time=`date +%Y-%m-%d-%H-%M-%S`
 dir="Videos/Screencasts"
@@ -39,7 +39,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 if [[ -f "$pid" ]]; then
-	sed -i ${RASI} -e "s/lines: .*/lines:                       1\;/g"
+	sed -i ${RASI} -e "s/lines:.*/lines: 1\;/g"
 	opt="$option_1"
 else	
 	opt="$option_2\n$option_3\n$option_4\n$option_5"
@@ -64,7 +64,7 @@ countdown () {
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
-		sed -i ${RASI} -e "s/lines: .*/lines:                       4\;/g"
+		sed -i ${RASI} -e "s/lines: .*/lines: 4\;/g"
 		dunstify -t 1000 -h string:x-dunst-stack-tag:obscreenshot -i /usr/share/icons/dunst/video.png "Record Stop."
 		pkill -2 wf-recorder
 		rm "$log" "$pid"

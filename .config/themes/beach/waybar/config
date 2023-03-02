@@ -1,7 +1,6 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height
     "spacing": 4, // Gaps between modules (4px)
     "fixed-center": true,
     
@@ -36,7 +35,8 @@
         "on-click": "~/.config/rofi/bin/music",
         "max-length": 50,
         "format-stopped": "Stopped",
-        "on-click-right": "alacritty -e ncmpcpp"
+        "on-click-right": "alacritty -e ncmpcpp",
+        "tooltip": false
     },
     
     "tray": {
@@ -46,8 +46,8 @@
     "clock": {
         // "timezone": "America/New_York",
         "format": "<span color=\"#819400\"></span> {:%H:%M}",
-        "tooltip-format": " <big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "<span color=\"#819400\"></span> {:%Y-%m-%d}"
+        "format-alt": "<span color=\"#819400\"></span> {:%Y-%m-%d}",
+        "tooltip": false
     },
     
     "backlight": {
@@ -55,7 +55,8 @@
         "format": "<span color=\"#289c93\">{icon}</span> {percent}%",
         "format-icons": ["", "", "", "", "", "", "", ""],
         "on-scroll-up": "brightnessctl set +5%",
-		"on-scroll-down": "brightnessctl set 5%-"
+		"on-scroll-down": "brightnessctl set 5%-",
+		"tooltip": false
     },
     
     "battery": {
@@ -68,7 +69,8 @@
         "format-charging": "<span color=\"#696ebf\"></span> {capacity}%",
         "format-plugged": "<span color=\"#696ebf\"></span> {capacity}%",
         "format-alt": "<span color=\"#696ebf\">{icon}</span> {time}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
     },
   
     "network": {
@@ -77,10 +79,9 @@
         "format-linked": "<span color=\"#2587cc\">歷</span> {ifname}",
         "format-disconnected": "轢 Disconected",
         "family": "ipv4",
-        "tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
         "on-click": "~/.config/rofi/bin/network_menu",
-        "on-click-right": "nm-connection-editor"
+        "on-click-right": "nm-connection-editor",
+        "tooltip": false
     },
     
     "pulseaudio": {
@@ -96,7 +97,8 @@
         },
         "on-double-click": "pavucontrol",
         "on-click": "pulsemixer --unmute",
-        "on-click-right": "pulsemixer --mute"
+        "on-click-right": "pulsemixer --mute",
+        "tooltip": false
     },
     
     "hyprland/submap": {

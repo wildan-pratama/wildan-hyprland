@@ -18,12 +18,12 @@ USE_ICON=NO
 /*****----- Main Window -----*****/
 window {
     transparency:                "real";
-    location:                    center;
-    anchor:                      center;
+    location:                    south;
+    anchor:                      south;
     fullscreen:                  false;
-    width:                       300px;
+    width:                       350px;
     x-offset:                    0px;
-    y-offset:                    0px;
+    y-offset:                    -20px;
     margin:                      0px;
     padding:                     0px;
     border:                      2px solid;
@@ -95,7 +95,7 @@ textbox {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       4;
+    lines: 4;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;

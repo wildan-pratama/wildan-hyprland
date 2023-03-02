@@ -6,7 +6,7 @@
     "fixed-center": true,
     
     // Choose the order of the modules
-    "modules-left": ["clock", "mpd"],
+    "modules-left": ["clock", "mpd", "hyprland/submap", "custom/recording"],
     "modules-center": ["wlr/workspaces"],
     "modules-right": ["battery", "backlight", "network", "pulseaudio", "tray"],
     
@@ -41,7 +41,7 @@
     
     "clock": {
         "format": "<span color=\"#75dbe1\"> </span> {:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip": false,
         "today-format": "<b>{}</b>",
         "format-alt": "<span color=\"#75dbe1\"> </span> {:%Y-%m-%d}"
     },
@@ -49,7 +49,10 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% <span color=\"#51b4ff\">{icon}</span>",
-        "format-icons": ["", "", "", "", "", "", "", ""]
+        "format-icons": ["", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-",
+		"tooltip": false
     },
     
     "battery": {
@@ -62,7 +65,8 @@
         "format-charging": "{capacity} <span color=\"#75dbe1\"></span>%",
         "format-plugged": "{capacity} <span color=\"#75dbe1\"></span>%",
         "format-alt": "{time} <span color=\"#75dbe1\">{icon}</span>",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
     },
     
     "network": {
@@ -71,8 +75,7 @@
         "format-linked": "{ifname} <span color=\"#b4a1db\">歷</span>",
         "format-disconnected": "Disconected 轢",
         "family": "ipv4",
-        "tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
+        "tooltip": false,
         "on-click": "~/.config/rofi/bin/network_menu",
         "on-click-right": "nm-connection-editor"
     },
@@ -90,7 +93,24 @@
         },
         "on-double-click": "pavucontrol",
         "on-click": "pulsemixer --unmute",
-        "on-click-right": "pulsemixer --mute"
+        "on-click-right": "pulsemixer --mute",
+        "tooltip": false
     },
+    
+    "hyprland/submap": {
+		"format": "✌️ Resize",
+		"max-length": 15,
+		"on-click": "hyprctl dispatch submap reset",
+		"tooltip": false
+	},
+	
+	"custom/recording": {
+		"exec": "~/.config/hypr/bin/recording status",
+		"format": "{}",
+		"on-click": "~/.config/hypr/bin/recording stop",
+		"restart-interval": 1,
+		"return-type": "json",
+		"tooltip": false
+	}
 }
 

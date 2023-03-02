@@ -35,7 +35,8 @@
         "on-click": "~/.config/rofi/bin/music",
         "max-length": 50,
         "format-stopped": "Stopped",
-        "on-click-right": "alacritty -e ncmpcpp"
+        "on-click-right": "alacritty -e ncmpcpp",
+        "tooltip": false
     },
     
     "tray": {
@@ -45,7 +46,7 @@
     "clock": {
         // "timezone": "America/New_York",
         "format": " {:%H:%M}",
-        "tooltip-format": " <big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip": false,
         "format-alt": "<span color=\"#819400\"></span> {:%Y-%m-%d}"
     },
     
@@ -54,7 +55,8 @@
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", ""],
         "on-scroll-up": "brightnessctl set +5%",
-		"on-scroll-down": "brightnessctl set 5%-"
+		"on-scroll-down": "brightnessctl set 5%-",
+		"tooltip": false
     },
     
     "battery": {
@@ -67,7 +69,8 @@
         "format-charging": "<span color=\"#696ebf\"></span> {capacity}%",
         "format-plugged": "<span color=\"#696ebf\"></span> {capacity}%",
         "format-alt": "<span color=\"#696ebf\">{icon}</span> {time}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
     },
   
     "network": {
@@ -78,7 +81,8 @@
         "format-disconnected": "轢 Disconected",
         "family": "ipv4",
         "on-click": "~/.config/rofi/bin/network_menu",
-        "on-click-right": "nm-connection-editor"
+        "on-click-right": "nm-connection-editor",
+        "tooltip": false
     },
     
     "pulseaudio": {
@@ -94,7 +98,8 @@
         },
         "on-double-click": "pavucontrol",
         "on-click": "pulsemixer --unmute",
-        "on-click-right": "pulsemixer --mute"
+        "on-click-right": "pulsemixer --mute",
+        "tooltip": false
     },
     
     "hyprland/window": {

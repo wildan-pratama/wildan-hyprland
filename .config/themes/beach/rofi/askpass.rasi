@@ -13,7 +13,7 @@ window {
     fullscreen:                  false;
     width:                       350px;
     x-offset:                    0px;
-    y-offset:                    -58px;
+    y-offset:                    -20px;
     padding:                     15px;
     border:                      2px solid;
     border-radius:               0px;

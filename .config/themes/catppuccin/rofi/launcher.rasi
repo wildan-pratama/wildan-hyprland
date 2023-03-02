@@ -52,8 +52,8 @@ window {
     anchor:                      southwest;
     fullscreen:                  false;
     width:                       500px;
-    x-offset:                    15%;
-    y-offset:                    -68px;
+    x-offset:                    10%;
+    y-offset:                    -20px;
 
     /* properties for all widgets */
     enabled:                     true;

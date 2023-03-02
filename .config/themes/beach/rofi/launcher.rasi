@@ -53,7 +53,7 @@ window {
     fullscreen:                  false;
     width:                       500px;
     x-offset:                    20px;
-    y-offset:                    -58px;
+    y-offset:                    -20px;
 
     /* properties for all widgets */
     enabled:                     true;

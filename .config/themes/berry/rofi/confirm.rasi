@@ -18,16 +18,16 @@ USE_ICON=NO
 /*****----- Main Window -----*****/
 window {
     transparency:                "real";
-    location:                    south;
-    anchor:                      south;
+    location:                    center;
+    anchor:                      center;
     fullscreen:                  false;
     width:                       300px;
     x-offset:                    0;
     y-offset:                    -68px;
     margin:                      0px;
     padding:                     0px;
-    border:                      3px solid;
-    border-radius:               4px;
+    border:                      2px solid;
+    border-radius:               14px;
     border-color:                @selected;
     cursor:                      "default";
     background-color:            @background;
