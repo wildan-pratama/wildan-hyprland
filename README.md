@@ -1,4 +1,4 @@
-# Hyprland with beautifull themes on Arch linux
+# Hyprland with beautiful themes on Arch linux
 
 **Wildan Pratama**
 
