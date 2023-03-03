@@ -26,7 +26,7 @@ window {
     y-offset:                    0px;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               0px;
     border-color:                @selected;
     cursor:                      "default";
@@ -95,7 +95,7 @@ textbox {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       4;
+    lines: 4;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;

@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/themes"
-STYLE="adaptive"
+STYLE="default"
 RASI="$DIR/$STYLE/rofi/music.rasi"
 
 # Theme Elements
