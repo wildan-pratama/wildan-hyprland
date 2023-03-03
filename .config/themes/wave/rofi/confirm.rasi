@@ -23,10 +23,10 @@ window {
     fullscreen:                  false;
     width:                       250px;
     x-offset:                    -10px;
-    y-offset:                    -48px;
+    y-offset:                    -30px;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               0px;
     border-color:                @selected;
     cursor:                      "default";

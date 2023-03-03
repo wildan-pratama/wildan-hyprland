@@ -37,12 +37,12 @@ terminal_font_size='10'
 terminal_opacity='1.0'
 
 # Geany
-geany_colors='arc.conf'
+geany_colors='nordic.conf'
 geany_font='JetBrains Mono 10'
 
 # Appearance
 gtk_font='Noto Sans 9'
-gtk_theme='Arc-Dark'
+gtk_theme='Nordic'
 icon_theme='Zafiro'
 cursor_theme='Qogirr'
 

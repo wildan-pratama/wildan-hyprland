@@ -1,7 +1,6 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
     "fixed-center": true,
     
     // Choose the order of the modules
@@ -10,7 +9,6 @@
     "modules-right": ["battery", "backlight", "pulseaudio", "network", "clock", "tray"],
     
     // Modules configuration
-   
     "wlr/workspaces": {
         "disable-scroll": false,
         "on-scroll-up": "hyprctl dispatch workspace e+1",

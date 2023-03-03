@@ -15,6 +15,7 @@ window {
     x-offset:                    0px;
     y-offset:                    0px;
     padding:                     20px;
+    border:                      1px solid;
     border-radius:               0px;
     border-color:                @selected;
     background-color:            @background;
@@ -66,6 +67,7 @@ entry {
     background-color:            @background-alt;
     text-color:                  inherit;
     cursor:                      text;
+    placeholder:                 "Password";
     placeholder-color:           inherit;
 }
 

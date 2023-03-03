@@ -28,6 +28,8 @@
 #disk,
 #battery,
 #backlight,
+#submap,
+#custom-recording,
 #workspaces {
     padding-left: 0.7em;
     padding-right: 0.7em;
@@ -47,6 +49,8 @@
     color: #e06a70;
 }
 
-#mpd.stopped {
+#mpd.stopped,
+#submap,
+#custom-recording {
     color: #e06a70;
 }

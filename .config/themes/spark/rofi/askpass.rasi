@@ -13,10 +13,10 @@ window {
     fullscreen:                  false;
     width:                       350px;
     x-offset:                    0px;
-    y-offset:                    -68px;
+    y-offset:                    -20px;
     padding:                     20px;
-    border:                      0px solid;
-    border-radius:               4px;
+    border:                      2px solid;
+    border-radius:               6px;
     border-color:                @selected;
     background-color:            @background;
     cursor:                      "default";

@@ -53,14 +53,14 @@ window {
     fullscreen:                  false;
     width:                       500px;
     x-offset:                    15%;
-    y-offset:                    -68px;
+    y-offset:                    -20px;
 
     /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
-    border-radius:               4px;
+    border:                      2px solid;
+    border-radius:               6px;
     border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */

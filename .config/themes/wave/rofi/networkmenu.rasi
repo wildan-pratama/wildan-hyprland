@@ -54,13 +54,13 @@ window {
     width:                       450px;
     height:                      420px;
     x-offset:                    -10px;
-    y-offset:                    -48px;
+    y-offset:                    -30px;
 
     /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               0px;
     border-color:                @border-colour;
     cursor:                      "default";

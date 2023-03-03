@@ -59,6 +59,7 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
+    border:                      1px solid;
     border-radius:               0px;
     border-color:                @border-colour;
     cursor:                      "default";
