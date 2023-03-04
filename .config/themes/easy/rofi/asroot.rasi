@@ -21,12 +21,12 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       800px;
     x-offset:                    0px;
     y-offset:                    0px;
     margin:                      0px;
     padding:                     0px;
-    border:                      2px;
+    border:                      2px solid;
     border-radius:               8px;
     border-color:                @selected;
     cursor:                      "default";
@@ -36,9 +36,9 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     15px;
     margin:                      0px;
-    padding:                     20px;
+    padding:                     30px;
     background-color:            transparent;
     children:                    [ "inputbar", "message", "listview" ];
 }
@@ -60,16 +60,16 @@ textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "";
-    padding:                     10px 12px;
+    padding:                     10px 14px;
     border-radius:               0px;
-    background-color:            @active;
+    background-color:            @urgent;
     text-color:                  @background;
 }
 prompt {
     enabled:                     true;
     padding:                     10px;
     border-radius:               0px;
-    background-color:            @selected;
+    background-color:            @active;
     text-color:                  @background;
 }
 
@@ -94,13 +94,13 @@ textbox {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     5;
+    columns:                     6;
     lines:                       1;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
     
-    spacing:                     10px;
+    spacing:                     15px;
     background-color:            transparent;
     cursor:                      "default";
 }
@@ -108,7 +108,7 @@ listview {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    padding:                     22px 10px;
+    padding:                     30px 10px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
@@ -117,7 +117,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "feather 20";
+    font:                        "feather 28";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
@@ -127,10 +127,7 @@ element-text {
 
 element normal.normal,
 element alternate.normal {
-    border:                      1px solid;
-    border-radius:               0px;
-    border-color:                @selected;
-    background-color:            var(background);
+    background-color:            var(background-alt);
     text-color:                  var(foreground);
 }
 element normal.urgent,

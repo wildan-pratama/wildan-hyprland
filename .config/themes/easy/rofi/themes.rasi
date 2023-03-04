@@ -21,7 +21,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       250px;
+    width:                       300px;
     x-offset:                    0px;
     y-offset:                    0px;
     margin:                      0px;
@@ -60,9 +60,9 @@ textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "";
-    padding:                     10px 14px;
+    padding:                     10px 12px;
     border-radius:               6px;
-    background-color:            @selected;
+    background-color:            @urgent;
     text-color:                  @background;
 }
 prompt {
@@ -95,12 +95,12 @@ textbox {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       4;
+    lines: 4;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
     
-    spacing:                     10px;
+    spacing:                     5px;
     background-color:            transparent;
     cursor:                      "default";
 }
@@ -121,12 +121,12 @@ element-text {
     text-color:                  inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.5;
+    horizontal-align:            0.0;
 }
 
 element normal.normal,
 element alternate.normal {
-    background-color:            var(background-alt);
+    background-color:            var(background);
     text-color:                  var(foreground);
 }
 element normal.urgent,
