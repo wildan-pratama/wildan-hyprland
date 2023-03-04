@@ -8,7 +8,7 @@ networkmanager-dmenu-git wf-recorder bc gtk-engine-murrine xfce-polkit dunst gea
 nwg-look xdg-desktop-portal-hyprland-git qt5-svg inetutils pamixer bluez-utils mpc mpd ncmpcpp \
 xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects qt5-quickcontrols2 brightnessctl \
 noto-fonts-main pipewire wireplumber grim slurp jq dunst qt5-wayland qt6-wayland pastel \
-dialog iw mc dhcpcd networkmanager network-manager-applet noto-fonts-emoji
+dialog iw mc dhcpcd networkmanager network-manager-applet noto-fonts-emoji wdisplays swww
 yay -Rs foot xdg-desktop-portal-gnome
 
 sudo cp -r usr /
