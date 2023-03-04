@@ -1,39 +1,77 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif, Iosevka Nerd Font;
-    font-size: 13px;
-    margin: 2px 3px;
+    font-family: "Iosevka Nerd Font";
+    border: none;
+    min-height: 0;
+    margin: 3px 3px;
 }
 
 #waybar {
-    background-color: #1E2128;
+    background-color: rgba(30,33,40,0.0);
+    color: #D8DEE9;
     transition-property: background-color;
     transition-duration: .5s;
+    font-size: 11px;
+    font-weight: bold;
 }
 
+/* Module */
 #clock,
-#battery,
 #cpu,
 #memory,
-#disk,
-#temperature,
-#backlight,
 #network,
 #pulseaudio,
-#custom-recording,
 #tray,
-#mpd {
-    padding-left: 0.6em;
-    padding-right: 0.6em;
+#mpd,
+#submap,
+#disk,
+#battery,
+#backlight,
+#custom-recording,
+#workspaces {
+    padding-left: 0.7em;
+    padding-right: 0.7em;
     color: #D8DEE9;
-    margin: 1.5px 2px;
+    margin: 2px 2px;
+    background: #2E3440;
+	border-radius: 5px;
 }
 
-#network {
-	color: #7aa2f7;
+#memory {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-#clock {
-	background-color: #7aa2f7;
-	color: #1E2128;
+#workspaces button {
+    font-weight: bold; /* Somewhy the bar-wide setting is ignored*/
+    padding: 0;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin: 2px 2px;
+}
+#workspaces button.active {
+    border-radius: 5px;
+    color: #62AEEF;
+    margin: 2px 2px;
+}
+
+#battery.charging, #battery.plugged {
+    color: #154c79;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: #e28743;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }

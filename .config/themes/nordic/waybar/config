@@ -2,79 +2,67 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "spacing": 4, // Gaps between modules (4px)
+    "fixed-center": true,
     
     // Choose the order of the modules
-    //"modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
-    //"modules-center": ["sway/window"],
-    "modules-right": ["mpd", "pulseaudio", "cpu", "memory", "backlight", "battery", "network#net2", "network", "clock", "tray"],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "modules-left": ["wlr/workspaces", "hyprland/window"],
+    // "modules-center": [],
+    "modules-right": ["custom/recording", "hyprland/submap", "mpd", "backlight", "pulseaudio", "network", "cpu", "memory", "disk", "battery", "clock", "tray"],
     
+    // Modules configuration
+    "wlr/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-click": "activate",
+        "format": "{icon}"
+     },
+    
+    "disk": {
+		"interval": 30,
+		"format": "{percentage_used}% <span color=\"#C778DD\"></span>",
+		"path": "/"
+	},
+	
     "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+        "format": "{title} - {artist} ",
+        "format-disconnected": "Disconnected",
+        "format-stopped": "Stopped",
+        "max-length": 50,
+        "on-click": "~/.config/rofi/bin/music",
+        "on-click-right": "alacritty -e ncmpcpp",
+        "tooltip": false
     },
-
+    
     "tray": {
         // "icon-size": 21,
         "spacing": 10
     },
     
     "clock": {
-        "format": " {:%H:%M,%e %b}",
-        "tooltip": false,
-        "today-format": "<b>{}</b>"
+        // "timezone": "America/New_York",
+        "format": "{:%H:%M} <span color=\"#BF616A\"></span>",
+        "format-alt": "{:%Y-%m-%d} <span color=\"#BF616A\"></span>",
+        "tooltip": false
     },
     
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}% <span color=\"#EFCA84\"></span>",
         "tooltip": false
     },
     
     "memory": {
-        "format": "{}% "
+        "format": "{}% <span color=\"#62AEEF\"></span>"
     },
     
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-",
+		"tooltip": false
     },
     
     "battery": {
@@ -83,46 +71,66 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "{capacity}% <span color=\"#EFCA84\">{icon}</span>",
+        "format-charging": "{capacity}% <span color=\"#EFCA84\"></span>",
+        "format-plugged": "{capacity}% <span color=\"#EFCA84\"></span>",
+        "format-alt": "{time} <span color=\"#EFCA84\">{icon}</span>",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    
-    "network": {
-        "format-wifi": "Connected",
-        "format-disconnected": "Disconnected",
+        "format-icons": ["", "", "", "", ""],
         "tooltip": false
     },
     
-    "network#net2": {
-        "format": "<span color=\"#1E2128\">直</span>",
-        "format-disconnected": "<span color=\"#e06a70\">睊</span>",
+    "network": {       
+        "format-wifi": "{essid} <span color=\"#C778DD\"></span>",
+        "format-ethernet": "{ipaddr}/{cidr} <span color=\"#C778DD\"></span>",
+        "tooltip-format": "{ifname} via {gwaddr} <span color=\"#C778DD\"></span>",
+        "format-linked": "{ifname} (No IP) <span color=\"#C778DD\"></span>",
+        "format-disconnected": "Disconnected 轢",
+        //"format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "on-click": "~/.config/rofi/bin/network_menu",
+        "on-click-right": "nm-connection-editor",
         "tooltip": false
     },
     
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format": "{volume}% <span color=\"#62AEEF\">{icon}</span>",
+        "format-bluetooth": "{volume}% <span color=\"#62AEEF\">{icon} </span>",
+        "format-bluetooth-muted": "MUTE 婢 ",
+        "format-muted": "MUTE 婢",
+        "format-source": "{volume}% <span color=\"#62AEEF\"></span>",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "default": ["奄", "奄", "", "", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-double-click": "pavucontrol",
+        "on-click": "pulsemixer --unmute",
+        "on-click-right": "pulsemixer --mute",
+        "tooltip": false
     },
     
+    "hyprland/window": {
+		"format": "{}",
+		"max-length": 50,
+		"separate-outputs": true
+	},
+	
+	"hyprland/submap": {
+		"format": "Resize ✌",
+		"max-length": 15,
+		"on-click": "hyprctl dispatch submap reset",
+		"tooltip": false
+	},
+	
+	"custom/recording": {
+		"exec": "~/.config/hypr/bin/recording status",
+		"format": "{}",
+		"on-click": "~/.config/hypr/bin/recording stop",
+		"restart-interval": 1,
+		"return-type": "json",
+		"tooltip": false
+	}
+
 }
 
