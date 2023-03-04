@@ -65,7 +65,7 @@ yay -Rs xdg-desktop-portal-gnome
 
 ## Tutorial for Hyprland settings:
 
- - Background handled by swaybg
+ - Background handled by swww
  - Gtk theme handled by nwg-look
  - Filebrowser = Nemo
  - Default Terminal-Emulator = alacritty
