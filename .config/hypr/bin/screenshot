@@ -43,5 +43,10 @@ shotnow () {
 }
 
 # Exec script
-shotnow
-
+if [ "$1" == "shot" ];
+then
+	shotnow
+elif [ "$1" == "shot-copy" ];
+then
+	grim - | copy_shot
+fi
