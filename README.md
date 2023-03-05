@@ -57,7 +57,6 @@ cp -r .gtkrc-2.0 ~/
 ## Note
 - Recommend archinstall with Sway as desktop for base
 - Don't forget to enable and set sddm as default display manager
-- After selecting theme you must open `GTK Setting` from launcher and just `Apply` button to apply gtk2 theme
 - It’s recommended to uninstall any other portal implementations to avoid conflicts with the -hyprland or -wlr ones. -kde and -gnome are known to cause issues. both -wlr and -hyprland installed at once will also cause conflicts. Choose one and uninstall the other. see https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/
 ``` bash
 yay -Rs xdg-desktop-portal-gnome
