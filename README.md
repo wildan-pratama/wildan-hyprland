@@ -77,19 +77,34 @@ Main shortcuts: `~/.config/hypr/keybind.conf`
 
 <kbd>MOD</kbd> key is set to the <kbd>WINKEY</kbd>/<kbd>LINKEY</kbd>
 
+<kbd>Apps</kbd>
  - <kbd>MOD</kbd>+<kbd>Return</kbd> = open terminal
  - <kbd>MOD</kbd>+<kbd>W</kbd> = open Browser (brave)
  - <kbd>MOD</kbd>+<kbd>F</kbd> = open File Manager (nemo)
+ - <kbd>MOD</kbd>+<kbd>E</kbd> = open Editor (geany)
  - <kbd>MOD</kbd>+<kbd>D</kbd>= open Launcher (rofi)
+ - <kbd>MOD</kbd>+<kbd>R</kbd> = open root menu
+ 
+ <kbd>On Windows</kbd> *you can use arrow/hjkl key too
  - <kbd>MOD</kbd>+<kbd>Q</kbd> = close focused app [kill]
- - <kbd>MOD</kbd>+<kbd>S</kbd> = screenshot/bring up screenshot menu
- - <kbd>MOD</kbd>+<kbd>R</kbd> = screenrecord/bring up screenrecord menu
- - <kbd>MOD</kbd>+<kbd>X</kbd> = power-menu
  - <kbd>MOD</kbd>+<kbd>SPACE</kbd>  = float window
  - <kbd>MOD</kbd>+<kbd>HOLD DOWN</kbd> = drag floating window
- - <kbd>MOD</kbd>+<kbd>↑ ↓ → ←</kbd>  = switch focus respectively 
+ - <kbd>MOD</kbd>+<kbd>↑ ↓ → ←</kbd>  = switch focus respectively
+ - <kbd>MOD</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd> = submmap/resize window
+ - <kbd>MOD</kbd>+<kbd>Tab</kbd>  = switch between windows in a floating workspace
+ - <kbd>MOD</kbd>+<kbd>P</kbd>  = pseudo
+ - <kbd>MOD</kbd>+<kbd>V</kbd>  = toggle split
+ 
+ <kbd>Screenshot/Record</kbd>
+ - <kbd>MOD</kbd>+<kbd>S</kbd> = screenshot/bring up screenshot menu
+ - <kbd>MOD</kbd>+<kbd>PrintScrn</kbd> = screenrecord/bring up screenrecord menu
+ - <kbd>PrintScrn</kbd> = Quick Screenshot the whole screen and copy to clipboard
+ - <kbd>Shift</kbd>+<kbd>PrintScrn</kbd> = Quick Screenshot the whole screen and copy to clipboard without save it to image file
+ 
+ <kbd>Control</kbd>
+ - <kbd>MOD</kbd>+<kbd>X</kbd> = power-menu 
  - <kbd>MOD</kbd>+<kbd>N</kbd> = open network manager
  - <kbd>MOD</kbd>+<kbd>M</kbd> = open mpd controller
- - <kbd>MOD</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> = open root menu
- - <kbd>MOD</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd> = submmap/resize window
+ 
+ 
  
