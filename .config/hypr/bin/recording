@@ -1,13 +1,136 @@
 #!/usr/bin/env bash
-# $XDG_CONFIG_HOME/waybar/scripts/recording.sh
 
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+
+# Import Current Theme
+DIR="$HOME/.config/hypr/themes"
+STYLE="nordic"
+RASI="$DIR/$STYLE/rofi/recording.rasi"
 time=`date +%Y-%m-%d-%H-%M-%S`
 dir="Videos/Screencasts"
-RASI="$DIR/$STYLE/rofi/recording.rasi"
-pid="$HOME/$dir/process.pid"
+file="$HOME/$dir/Screencasts_${time}.mkv"
 log="$HOME/$dir/screencasts.log"
-WF_RECORDER_OPTS=""
+pid="$HOME/$dir/process.pid"
 
+
+# Theme Elements
+prompt='Screen Record'
+if [[ -f "$pid" ]]; then
+	mesg='is recording the screen'
+else
+	mesg='is not recording the screen'
+fi
+
+# Option
+option_1=" Stop"
+option_2=" Record screen without audio"
+option_3=" Record screen with audio"
+option_4=" Record area without audio"
+option_5=" Record area with audio"
+
+# Rofi CMD
+rofi_cmd() {
+	rofi -dmenu \
+		-p "$prompt" \
+		-mesg "$mesg" \
+		-markup-rows \
+		-theme ${RASI}
+}
+
+# Pass variables to rofi dmenu
+if [[ -f "$pid" ]]; then
+	sed -i ${RASI} -e "s/lines:.*/lines: 1\;/g"
+	opt="$option_1"
+else	
+	sed -i ${RASI} -e "s/lines:.*/lines: 4\;/g"
+	opt="$option_2\n$option_3\n$option_4\n$option_5"
+fi
+
+run_rofi() {
+	echo -e "$opt" | rofi_cmd
+}
+
+# Directory
+if [[ ! -d "$dir" ]]; then
+	mkdir -p "$dir"
+fi
+
+# countdown
+countdown () {
+	for sec in `seq $1 -1 1`; do
+		dunstify -t 1000 -h string:x-dunst-stack-tag:screenshottimer -i /usr/share/icons/dunst/timer.png "Screenrecording in : $sec"
+		sleep 0.5
+	done
+}
+
+# take shots
+stop_rec() {
+	dunstify -t 1000 -h string:x-dunst-stack-tag:obscreenshot -i /usr/share/icons/dunst/video.png "Record Stop."
+	pkill -2 wf-recorder
+	rm "$log" "$pid"
+	}
+
+rec_noaudio() {
+	countdown '5'
+	wf-recorder -f "$file" 1>"$log" 2>&1 &
+	printf "$file" "$log" > "$pid"
+}
+
+rec_audio() {
+	countdown '5'
+	wf-recorder -a -f "$file" 1>"$log" 2>&1 &
+	printf "$file" "$log" > "$pid"
+}
+
+recarea_noaudio() {
+	sleep 0.5
+	wf-recorder -g "$(slurp)" -f "$file" 1>"$log" 2>&1 &
+	printf "$file" "$log" > "$pid"
+}
+
+recarea_audio() {
+	sleep 0.5
+	wf-recorder -a -g "$(slurp)" -f "$file" 1>"$log" 2>&1 &
+	printf "$file" "$log" > "$pid"
+}
+		
+# Execute Command
+run_cmd() {
+	if [[ "$1" == '--opt1' ]]; then
+		stop_rec
+	elif [[ "$1" == '--opt2' ]]; then
+		rec_noaudio
+	elif [[ "$1" == '--opt3' ]]; then
+		rec_audio
+	elif [[ "$1" == '--opt4' ]]; then
+		recarea_noaudio
+	elif [[ "$1" == '--opt5' ]]; then
+		recarea_audio
+	fi
+}
+
+rofi_sel() {
+	chosen="$(run_rofi)"
+	case ${chosen} in
+    $option_1)
+		run_cmd --opt1
+        ;;
+    $option_2)
+		run_cmd --opt2
+        ;;
+    $option_3)
+		run_cmd --opt3
+        ;;
+    $option_4)
+		run_cmd --opt4
+        ;;
+    $option_5)
+		run_cmd --opt5
+        ;;
+esac
+}
+
+# Actions
 if [ "$1" == "status" ];
 then
 	if [ -f "$pid" ];
@@ -19,10 +142,8 @@ then
 	exit
 elif [ "$1" == "stop" ];
 then
-	sed -i ${RASI} -e "s/lines: .*/lines:                       4\;/g"
-	dunstify -t 1000 -h string:x-dunst-stack-tag:obscreenshot -i /usr/share/icons/dunst/video.png "Record Stop."
-	pkill -2 wf-recorder
-	rm "$log" "$pid"
-else
-	printf "Argument %s not valid" "$1"
+	stop_rec
+elif [ "$1" == "rofi" ];
+then
+	rofi_sel
 fi

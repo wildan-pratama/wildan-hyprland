@@ -30,16 +30,23 @@ After yay installed you can clone this repositorie and just run `install.sh`
 
 Or you can install manualy with this step
 
-### Packages
+### Packages base
 
 ``` bash
-yay -Syy git sddm-git polkit hyprland-bin waybar-hyprland-git alacritty rofi-lbonn-wayland-git \
-nemo gvfs-mtp swayidle file-roller swaybg swaylock-effects-git wl-clipboard mailcap mpv \
-networkmanager-dmenu-git wf-recorder bc gtk-engine-murrine xfce-polkit dunst geany viewnior \
-nwg-look xdg-desktop-portal-hyprland-git qt5-svg inetutils pamixer bluez-utils mpc mpd ncmpcpp \
-xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects qt5-quickcontrols2 brightnessctl \
-noto-fonts-main pipewire wireplumber grim slurp jq dunst qt5-wayland qt6-wayland pastel \
-dialog iw mc dhcpcd networkmanager network-manager-applet noto-fonts-emoji swww
+yay -Syy sddm-git polkit hyprland-bin waybar-hyprland-git alacritty rofi-lbonn-wayland-git \
+swayidle  swaybg swaylock-effects-git wl-clipboard mailcap networkmanager-dmenu-git wf-recorder \
+bc gtk-engine-murrine xfce-polkit dunst nwg-look xdg-desktop-portal-hyprland-git qt5-svg \
+inetutils pamixer bluez-utils xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects \
+qt5-quickcontrols2 brightnessctl noto-fonts-main pipewire wireplumber grim slurp jq dunst \
+qt5-wayland qt6-wayland pastel networkmanager network-manager-applet noto-fonts-emoji wdisplays swww
+
+```
+
+### Packages gui file, media, and text editor
+
+``` bash
+yay -Syy thunar thunar-archive-pluginfile-roller mpv geany viewnior mpc mpd ncmpcpp
+
 ```
 
 ### Copy Configuration and stuff
