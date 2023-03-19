@@ -55,7 +55,7 @@ window {
     location:                    southeast;
     anchor:                      southeast;
     fullscreen:                  false;
-    width:                       250px;
+    width:                       300px;
     x-offset:                    -20px;
     y-offset:                    -20px;
 

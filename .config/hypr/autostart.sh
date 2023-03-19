@@ -19,7 +19,7 @@ done
 exec mpd &
 
 # Swayidle
-exec swayidle -w timeout 1800 'exec ~/.config/hypr/bin/lock.sh' timeout 1900 'systemctl suspend' &
+swayidle -w timeout 1800 'lock' timeout 1920 'systemctl suspend' &
 
 # Etc
 sleep 1

@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/hypr/themes"
-STYLE="nordic"
+STYLE="paradise"
 RASI="$DIR/$STYLE/rofi/music.rasi"
 
 # Theme Elements

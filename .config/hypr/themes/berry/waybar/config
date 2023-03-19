@@ -10,7 +10,7 @@
     // Choose the order of the modules
     "modules-left": [ "clock", "mpd"],
     "modules-center": ["wlr/workspaces"],
-    "modules-right": ["pulseaudio", "battery", "backlight", "network", "hyprland/submap", "custom/recording", "tray"],
+    "modules-right": ["hyprland/submap", "custom/recording", "pulseaudio", "battery", "backlight", "network", "tray"],
     
     // Modules configuration
     // Modules configuration
@@ -31,7 +31,7 @@
     "mpd": {
         "format": "<span color=\"#d87e97\"></span> {title} - {artist}",
         "format-disconnected": "<span color=\"#d87e97\">Disconnected</span>",
-        "on-click": "~/.config/rofi/bin/music",
+        "on-click": "music",
         "max-length": 50,
         "format-stopped": "Stopped",
         "on-click-right": "alacritty -e ncmpcpp",
@@ -79,7 +79,7 @@
         "format-linked": "<span color=\"#d87e97\">歷</span> {ifname}",
         "format-disconnected": "<span color=\"#d87e97\">轢 Disconected</span>",
         "family": "ipv4",
-        "on-click": "~/.config/rofi/bin/network_menu",
+        "on-click": "network_menu",
         "on-click-right": "nm-connection-editor",
         "tooltip": false
     },
@@ -108,16 +108,16 @@
 	},
 	
 	"hyprland/submap": {
-		"format": "Resize",
+		"format": "<span color=\"#61c766\"></span>",
 		"max-length": 15,
 		"on-click": "hyprctl dispatch submap reset",
 		"tooltip": false
 	},
 	
 	"custom/recording": {
-		"exec": "~/.config/hypr/bin/recording status",
-		"format": "{}",
-		"on-click": "~/.config/hypr/bin/recording stop",
+		"exec": "recording status",
+		"format": "<span color=\"#BF616A\">{}</span>",
+		"on-click": "recording stop",
 		"restart-interval": 1,
 		"return-type": "json",
 		"tooltip": false

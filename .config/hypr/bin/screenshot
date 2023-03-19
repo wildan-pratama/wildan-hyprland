@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/hypr/themes"
-STYLE="nordic"
+STYLE="paradise"
 RASI="$DIR/$STYLE/rofi/screenshot.rasi"
 
 # Theme Elements
@@ -15,16 +15,18 @@ mesg="Directory :: Pictures/Screenshots"
 layout=`cat ${RASI} | grep 'USE_ICON' | cut -d'=' -f2`
 if [[ "$layout" == 'NO' ]]; then
 	option_1=" Capture Desktop"
-	option_2=" Capture Area"
-	option_3=" Capture Window"
-	option_4=" Capture in 5s"
-	option_5=" Capture in 10s"
+	option_2=" Capture All Monitor"
+	option_3=" Capture Area"
+	option_4=" Capture Window"
+	option_5=" Capture in 5s"
+	option_6=" Capture in 10s"
 else
 	option_1=""
-	option_2=""
-	option_3=""
-	option_4=""
-	option_5=""
+	option_2="+"
+	option_3=""
+	option_4=""
+	option_5=""
+	option_6=""
 fi
 
 # Rofi CMD
@@ -38,8 +40,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	#echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
-	echo -e "$option_1\n$option_2\n$option_4\n$option_5" | rofi_cmd
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6" | rofi_cmd
 }
 
 # Screenshot
@@ -79,8 +80,14 @@ countdown () {
 }
 
 # take shots
-shotnow () {
+shotall () {
 	sleep 0.5 && grim "$dir/$file"
+	copy_shot < "$dir/$file"
+	notify_view
+}
+
+shot () {
+	sleep 0.5 && grim -o "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true)' | jq -r '.name')" "$dir/$file"
 	copy_shot < "$dir/$file"
 	notify_view
 }
@@ -94,25 +101,27 @@ shot5 () {
 
 shot10 () {
 	countdown '10'
-	sleep 0.5 grim "$dir/$file"
+	sleep 0.5 && grim "$dir/$file"
 	copy_shot < "$dir/$file"
 	notify_view
 }
 
 shotwin () {
-	grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" "$dir/$file"
+	sleep 0.5 && grim -g "$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" "$dir/$file"
 	copy_shot < "$dir/$file"
 	notify_view
 }
 
 shotarea () {
-	grim -t png -g "$(slurp)" "$dir/$file"
+	work="$(hyprctl monitors -j | jq -r 'map(.activeWorkspace.id)')"
+	win="$(hyprctl clients -j | jq -r --argjson workspaces "$work" 'map(select([.workspace.id] | inside($workspaces)))')"
+	grim -t png -g "$(echo "$win" | jq -r '.[] | "\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | slurp)" "$dir/$file"
 	copy_shot < "$dir/$file"
 	notify_view
 }
 
 copy () {
-	sleep 0.5 && grim - | copy_shot
+	grim -o "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true)' | jq -r '.name')" - | copy_shot
 	${notify_cmd_shot} "Copied to clipboard."
 	paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga &>/dev/null &
 }
@@ -120,14 +129,16 @@ copy () {
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
-		shotnow
+		shot
 	elif [[ "$1" == '--opt2' ]]; then
-		shotarea
+		shotall
 	elif [[ "$1" == '--opt3' ]]; then
-		shotwin
+		shotarea
 	elif [[ "$1" == '--opt4' ]]; then
-		shot5
+		shotwin
 	elif [[ "$1" == '--opt5' ]]; then
+		shot5
+	elif [[ "$1" == '--opt6' ]]; then
 		shot10
 	fi
 }
@@ -151,6 +162,9 @@ rofi_sel() {
     $option_5)
 		run_cmd --opt5
         ;;
+    $option_6)
+		run_cmd --opt6
+        ;;
 	esac
 }
 
@@ -158,8 +172,8 @@ rofi_sel() {
 # Exec script
 if [ "$1" == "shot" ];
 then
-	shotnow
-elif [ "$1" == "shot-copy" ];
+	shot
+elif [ "$1" == "copy" ];
 then
 	copy
 elif [ "$1" == "rofi" ];

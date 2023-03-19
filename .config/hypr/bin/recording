@@ -4,8 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/hypr/themes"
-STYLE="nordic"
-RASI="$DIR/$STYLE/rofi/recording.rasi"
+STYLE="paradise"
 time=`date +%Y-%m-%d-%H-%M-%S`
 dir="Videos/Screencasts"
 file="$HOME/$dir/Screencasts_${time}.mkv"
@@ -16,17 +15,19 @@ pid="$HOME/$dir/process.pid"
 # Theme Elements
 prompt='Screen Record'
 if [[ -f "$pid" ]]; then
+	RASI="$DIR/$STYLE/rofi/stoprec.rasi"
 	mesg='is recording the screen'
 else
+	RASI="$DIR/$STYLE/rofi/recording.rasi"
 	mesg='is not recording the screen'
 fi
 
 # Option
 option_1=" Stop"
-option_2=" Record screen without audio"
-option_3=" Record screen with audio"
-option_4=" Record area without audio"
-option_5=" Record area with audio"
+option_2=" Record current screen"
+option_3=" Record all screen"
+option_4=" Record area"
+CNFR="$DIR/$STYLE/rofi/confirm.rasi"
 
 # Rofi CMD
 rofi_cmd() {
@@ -37,13 +38,32 @@ rofi_cmd() {
 		-theme ${RASI}
 }
 
+# Ask Audio
+cnflayout=`cat ${CNFR} | grep 'USE_ICON' | cut -d'=' -f2`
+if [[ "$cnflayout" == 'NO' ]]; then
+	yes=' Yes'
+	no=' No'
+else
+	yes=''
+	no=''
+fi
+
+audio_ask() {
+		rofi -dmenu \
+		-p 'Audio' \
+		-mesg 'Are you want record with audio?' \
+		-theme ${CNFR}
+}
+
+confirm_audio() {
+	echo -e "$yes\n$no" | audio_ask
+}
+
 # Pass variables to rofi dmenu
 if [[ -f "$pid" ]]; then
-	sed -i ${RASI} -e "s/lines:.*/lines: 1\;/g"
 	opt="$option_1"
 else	
-	sed -i ${RASI} -e "s/lines:.*/lines: 4\;/g"
-	opt="$option_2\n$option_3\n$option_4\n$option_5"
+	opt="$option_2\n$option_3\n$option_4"
 fi
 
 run_rofi() {
@@ -70,27 +90,45 @@ stop_rec() {
 	rm "$log" "$pid"
 	}
 
+## All screen
 rec_noaudio() {
 	countdown '5'
 	wf-recorder -f "$file" 1>"$log" 2>&1 &
 	printf "$file" "$log" > "$pid"
 }
-
 rec_audio() {
 	countdown '5'
 	wf-recorder -a -f "$file" 1>"$log" 2>&1 &
 	printf "$file" "$log" > "$pid"
 }
 
-recarea_noaudio() {
-	sleep 0.5
-	wf-recorder -g "$(slurp)" -f "$file" 1>"$log" 2>&1 &
+## Current
+cur_noaudio() {
+	countdown '5'
+	wf-recorder -o "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true)' | jq -r '.name')" \
+	-f "$file" 1>"$log" 2>&1 &
+	printf "$file" "$log" > "$pid"
+}
+cur_audio() {
+	countdown '5'
+	wf-recorder -o "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true)' | jq -r '.name')" \
+	-a -f "$file" 1>"$log" 2>&1 &
 	printf "$file" "$log" > "$pid"
 }
 
-recarea_audio() {
+## Area
+work="$(hyprctl monitors -j | jq -r 'map(.activeWorkspace.id)')"
+win="$(hyprctl clients -j | jq -r --argjson workspaces "$work" 'map(select([.workspace.id] | inside($workspaces)))')"
+area_noaudio() {
 	sleep 0.5
-	wf-recorder -a -g "$(slurp)" -f "$file" 1>"$log" 2>&1 &
+	wf-recorder -g "$(echo "$win" | jq -r '.[] | "\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | slurp)" \
+	-f "$file" 1>"$log" 2>&1 &
+	printf "$file" "$log" > "$pid"
+}
+area_audio() {
+	sleep 0.5
+	wf-recorder -g "$(echo "$win" | jq -r '.[] | "\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | slurp)" \
+	-a -f "$file" 1>"$log" 2>&1 &
 	printf "$file" "$log" > "$pid"
 }
 		
@@ -99,16 +137,42 @@ run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
 		stop_rec
 	elif [[ "$1" == '--opt2' ]]; then
-		rec_noaudio
+		selected="$(confirm_audio)"
+		if [[ "$selected" == "$yes" ]];
+			then
+			cur_audio
+		elif [[ "$selected" == "$no" ]];
+			then
+			cur_noaudio
+        else
+			exit
+		fi
 	elif [[ "$1" == '--opt3' ]]; then
-		rec_audio
+		selected="$(confirm_audio)"
+		if [[ "$selected" == "$yes" ]];
+			then
+			rec_audio
+		elif [[ "$selected" == "$no" ]];
+			then
+			rec_noaudio
+		else
+			exit
+        fi
 	elif [[ "$1" == '--opt4' ]]; then
-		recarea_noaudio
-	elif [[ "$1" == '--opt5' ]]; then
-		recarea_audio
+		selected="$(confirm_audio)"
+		if [[ "$selected" == "$yes" ]];
+			then
+			area_audio
+		elif [[ "$selected" == "$no" ]];
+			then
+			area_noaudio
+		else
+			exit
+        fi
 	fi
 }
 
+# Execute Command
 rofi_sel() {
 	chosen="$(run_rofi)"
 	case ${chosen} in
@@ -124,9 +188,6 @@ rofi_sel() {
     $option_4)
 		run_cmd --opt4
         ;;
-    $option_5)
-		run_cmd --opt5
-        ;;
 esac
 }
 
@@ -135,11 +196,10 @@ if [ "$1" == "status" ];
 then
 	if [ -f "$pid" ];
 	then
-		echo '{"text":"Recording Screen"}'
+		echo '{"text":""}'
 	else
 		echo ''
 	fi
-	exit
 elif [ "$1" == "stop" ];
 then
 	stop_rec

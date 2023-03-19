@@ -21,7 +21,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       400px;
+    width:                       450px;
     x-offset:                    0px;
     y-offset:                    0px;
     margin:                      0px;
@@ -95,7 +95,7 @@ textbox {
 listview {
     enabled:                     true;
     columns:                     2;
-    lines:                       2;
+    lines:                       3;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;

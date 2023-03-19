@@ -21,7 +21,7 @@ window {
     location:                    south;
     anchor:                      south;
     fullscreen:                  false;
-    width:                       800px;
+    width:                       715px;
     x-offset:                    0px;
     y-offset:                    -20px;
     margin:                      0px;

@@ -28,7 +28,7 @@
         "format-disconnected": "Disconnected",
         "format-stopped": "Stopped",
         "max-length": 50,
-        "on-click": "~/.config/rofi/bin/music",
+        "on-click": "music",
         "on-click-right": "alacritty -e ncmpcpp",
         "tooltip": false
     },
@@ -71,7 +71,7 @@
         "family": "ipv4",
         "tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
-        "on-click": "~/.config/rofi/bin/network_menu",
+        "on-click": "network_menu",
         "on-click-right": "nm-connection-editor",
         "tooltip": false
     },
@@ -116,16 +116,16 @@
     },
     
     "hyprland/submap": {
-		"format": "Resize Window",
+		"format": "<span color=\"#61c766\"></span>",
 		"max-length": 15,
 		"on-click": "hyprctl dispatch submap reset",
 		"tooltip": false
 	},
 	
 	"custom/recording": {
-		"exec": "~/.config/hypr/bin/recording status",
-		"format": "{}",
-		"on-click": "~/.config/hypr/bin/recording stop",
+		"exec": "recording status",
+		"format": "<span color=\"#BF616A\">{}</span>",
+		"on-click": "recording stop",
 		"restart-interval": 1,
 		"return-type": "json",
 		"tooltip": false

@@ -22,7 +22,7 @@
         "format-disconnected": "Disconnected",
         "format-stopped": "Stopped",
         "max-length": 50,
-        "on-click": "~/.config/rofi/bin/music",
+        "on-click": "music",
         "on-click-right": "alacritty -e ncmpcpp",
         "tooltip": false
     },
@@ -58,12 +58,12 @@
 
     "network": {
         "interval": "0.1",
-        "format-wifi": "直 {essid} {bandwidthUpBits}, {bandwidthDownBits}",
-        "format-ethernet": "歷 {ifname} {bandwidthUpBits}, {bandwidthDownBits}",
-        "format-linked": "歷 {ifname} {bandwidthUpBits}, {bandwidthDownBits}",
+        "format-wifi": "直 {essid}",
+        "format-ethernet": "歷 {ifname}",
+        "format-linked": "歷 {ifname}",
         "format-disconnected": "轢 Disconected",
         "family": "ipv4",
-        "on-click": "~/.config/rofi/bin/network_menu",
+        "on-click": "network_menu",
         "tooltip": false
     },
     
@@ -109,16 +109,16 @@
     },
     
     "hyprland/submap": {
-		"format": "Resize ✌",
+		"format": "<span color=\"#61c766\"></span>",
 		"max-length": 15,
 		"on-click": "hyprctl dispatch submap reset",
 		"tooltip": false
 	},
 	
 	"custom/recording": {
-		"exec": "~/.config/hypr/bin/recording status",
-		"format": "{}",
-		"on-click": "~/.config/hypr/bin/recording stop",
+		"exec": "recording status",
+		"format": "<span color=\"#BF616A\">{}</span>",
+		"on-click": "recording stop",
 		"restart-interval": 1,
 		"return-type": "json",
 		"tooltip": false

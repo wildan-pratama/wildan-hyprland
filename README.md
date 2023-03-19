@@ -33,10 +33,10 @@ Or you can install manualy with this step
 ### Packages base
 
 ``` bash
-yay -Syy sddm-git polkit hyprland-bin waybar-hyprland-git alacritty rofi-lbonn-wayland-git \
+yay -Syy sddm-git polkit hyprland-git waybar-hyprland-git alacritty rofi-lbonn-wayland-git \
 swayidle  swaybg swaylock-effects-git wl-clipboard mailcap networkmanager-dmenu-git wf-recorder \
 bc gtk-engine-murrine xfce-polkit dunst nwg-look xdg-desktop-portal-hyprland-git qt5-svg \
-inetutils pamixer bluez-utils xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects \
+inetutils pamixer bluez-utils xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects hyprland-scratchpad-git \
 qt5-quickcontrols2 brightnessctl noto-fonts-main pipewire wireplumber grim slurp jq dunst \
 qt5-wayland qt6-wayland pastel networkmanager network-manager-applet noto-fonts-emoji wdisplays swww
 
@@ -94,6 +94,7 @@ Main shortcuts: `~/.config/hypr/keybind.conf`
  
  <kbd>On Windows</kbd> *you can use arrow/hjkl key too
  - <kbd>MOD</kbd>+<kbd>Q</kbd> = close focused app [kill]
+ - <kbd>MOD</kbd>+<kbd>A/G</kbd> = send/restore windows from scratchpad
  - <kbd>MOD</kbd>+<kbd>SPACE</kbd>  = float window
  - <kbd>MOD</kbd>+<kbd>HOLD DOWN</kbd> = drag floating window
  - <kbd>MOD</kbd>+<kbd>↑ ↓ → ←</kbd>  = switch focus respectively

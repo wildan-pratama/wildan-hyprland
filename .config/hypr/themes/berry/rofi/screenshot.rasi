@@ -20,10 +20,10 @@ window {
     anchor:                      	east;
     background-color:               @background;
     text-color:                     @foreground;
-    border:                  		1px;
+    border:                      	2px solid;
     border-color:                  	@selected;
     border-radius:                  14px;
-    width:                          100px;
+    width:                          105px;
     x-offset:                       -20;
     y-offset:                       0;
 }
@@ -84,7 +84,7 @@ case-indicator {
 listview {
     background-color:               @background;
     columns:                        1;
-    lines:							4;
+    lines:							6;
     spacing:                        10px;
     cycle:                          true;
     dynamic:                        true;

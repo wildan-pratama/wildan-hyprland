@@ -37,16 +37,16 @@ rofi_icon='Papirus-Apps'
 # Terminal
 terminal_font_name='JetBrainsMono Nerd Font'
 terminal_font_size='10'
-terminal_opacity='1.0'
+terminal_opacity='0.9'
 
 # Geany
-geany_colors='catppuccin-mocha.conf'
+geany_colors='manhattan.conf'
 geany_font='JetBrains Mono 10'
 
 # Appearance
 gtk_font='Noto Sans 9'
-gtk_theme='Catppuccin-Mocha'
-icon_theme='Luv-Folders'
+gtk_theme='Manhattan'
+icon_theme='Luv-Folders-Dark'
 cursor_theme='Vimix'
 
 # Dunst

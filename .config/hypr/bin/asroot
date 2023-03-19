@@ -4,11 +4,11 @@
 
 # Import Current Theme
 DIR="$HOME/.config/hypr/themes"
-STYLE="nordic"
+STYLE="paradise"
 RASI="$DIR/$STYLE/rofi/asroot.rasi"
 
 # rofi sudo askpass helper
-export SUDO_ASKPASS="$HOME"/.config/rofi/bin/askpass
+export SUDO_ASKPASS="$HOME"/.config/hypr/bin/askpass
 
 # Theme Elements
 prompt='Root'

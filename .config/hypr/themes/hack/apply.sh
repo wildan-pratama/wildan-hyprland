@@ -201,6 +201,8 @@ apply_rofi() {
 	sed -i ${PATH_ROF}/recording -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
 	sed -i ${PATH_ROF}/asroot -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
 	sed -i ${PATH_ROF}/askpass -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
+	sed -i ${PATH_ROF}/hyprwin -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
+	sed -i ${PATH_ROF}/scratchpad -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
 	}
 
 # Network Menu ------------------------------
