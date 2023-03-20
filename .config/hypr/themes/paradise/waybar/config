@@ -3,6 +3,10 @@
     "position": "left", // Waybar position (top|bottom|left|right)
     //"spacing": 1, // Gaps between modules (4px)
     "fixed-center": true,
+    "margin-top": 6, 				// Space above the bar
+	"margin-bottom": 6, 			// Space below the bar
+	"margin-left": 8, 				// Space to the left of the bar
+	"margin-right": 0, 				// Space to the right of the bar
     
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces"],
@@ -16,7 +20,7 @@
         "on-scroll-up": "hyprctl dispatch workspace e+1",
 		"on-scroll-down": "hyprctl dispatch workspace e-1",
         "on-click": "activate",
-        "format": "{icon}",
+        "format": "<big>{icon}</big>",
         "format-icons": {
              "1": "一",
              "2": "二",
@@ -37,14 +41,14 @@
     
     "clock#hour": {
         // "timezone": "America/New_York",
-        "format": "<big>{:%H}</big>",
+        "format": "{:%H}",
         "tooltip": false
         //"rotate": 270
     },
     
     "clock#min": {
         // "timezone": "America/New_York",
-        "format": "<big>{:%M}</big>",
+        "format": "{:%M}",
         "tooltip": false
         //"rotate": 270
     },

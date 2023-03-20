@@ -3,7 +3,6 @@
     font-family: "Iosevka Nerd Font";
     border: none;
     min-height: 0;
-    margin: 2px 2px;
 }
 
 #waybar {
@@ -17,7 +16,7 @@
 }
 
 /* Module */
-#clock,
+/*clock,*/
 #cpu,
 #memory,
 #network,
@@ -30,10 +29,7 @@
 #backlight,
 #custom-recording,
 #workspaces {
-    padding-left: 0.7em;
-    padding-right: 0.7em;
-    padding-top: 0.7em;
-    padding-bottom: 0.7em;
+    padding: 0.7em;
     color: #D8DEE9;
     margin: 2px 2px;
     background: #151515;
@@ -78,4 +74,21 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#clock.hour {
+	background-color: #151515;
+	border-radius: 5px 5px 0 0;
+	color: #cba6f7;
+	padding: 0.7em 0.7em 0 0.7em;
+	margin: 2px 2px 0 2px;
+    font-size: 15px;
+}
+#clock.min {
+	background-color: #151515;
+	border-radius: 0 0 5px 5px;
+	color: #f38ba8;
+	padding: 0 0.7em 0.7em 0.7em;
+	margin: 0 2px 2px 2px;
+    font-size: 15px;
 }

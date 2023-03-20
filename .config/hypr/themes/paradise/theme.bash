@@ -40,7 +40,7 @@ terminal_font_size='10'
 terminal_opacity='1.0'
 
 # Geany
-geany_colors='gruvbox.conf'
+geany_colors='himbeere.conf'
 geany_font='JetBrains Mono 10'
 
 # Appearance

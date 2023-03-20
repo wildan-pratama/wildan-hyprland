@@ -23,7 +23,7 @@
         "format-stopped": "Stopped",
         "max-length": 50,
         "on-click": "music",
-        "on-click-right": "alacritty -e ncmpcpp",
+        "on-click-right": "alacritty --class floating -e ncmpcpp",
         "tooltip": false
     },
     
