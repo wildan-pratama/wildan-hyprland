@@ -81,6 +81,7 @@ install () {
     hypr_pkgs
     gui_pkgs
     backup_conf
+cp_theme
     rm_pkgs
     ;;
   *)
