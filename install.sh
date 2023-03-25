@@ -9,16 +9,16 @@ cek_update () {
 hypr_pkgs () {
     echo "Installling hyprland pkgs"
     echo
-    yay -Syy polkit hyprland-git waybar-hyprland-git alacritty rofi-lbonn-wayland-git \
-    swayidle swaybg swaylock-effects-git wl-clipboard mailcap networkmanager-dmenu-git wf-recorder \
-    bc gtk-engine-murrine xfce-polkit dunst nwg-look xdg-desktop-portal-hyprland-git qt5-svg mpc mpd ncmpcpp \
-    inetutils pamixer bluez-utils xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects hyprland-scratchpad-git \
-    qt5-quickcontrols2 brightnessctl noto-fonts-main pipewire wireplumber grim slurp jq dunst \
-    qt5-wayland qt6-wayland pastel networkmanager network-manager-applet noto-fonts-emoji wdisplays swww
+    yay -Syy polkit hyprland-git waybar-hyprland-git alacritty rofi-lbonn-wayland-git swayidle bc \
+    swaybg swaylock-effects-git wl-clipboard mailcap networkmanager-dmenu-git wf-recorder xfce-polkit\
+    gtk-engine-murrine dunst nwg-look xdg-desktop-portal-hyprland-git qt5-svg mpc mpd ncmpcpp inetutils\
+    pamixer bluez-utils xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects networkmanager jq dunst \
+    qt5-quickcontrols2 brightnessctl noto-fonts network-manager-applet pipewire wireplumber grim slurp \
+    qt5-wayland qt6-wayland pastel  noto-fonts-emoji wdisplays swww xorg-xhost gvfs gvfs-mtp ntfs-3g ttf-jetbrains-mono-nerd
 }
 
 gui_pkgs () {
-    yay -Syy thunar thunar-archive-pluginfile-roller mpv geany viewnior 
+    yay -Syy thunar thunar-archive-plugin thunar-volman file-roller mpv geany viewnior 
 }
 
 rm_pkgs () {
@@ -81,7 +81,7 @@ install () {
     hypr_pkgs
     gui_pkgs
     backup_conf
-cp_theme
+    cp_theme
     rm_pkgs
     ;;
   *)
