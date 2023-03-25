@@ -6,7 +6,7 @@
     "margin-top": 6, 				// Space above the bar
 	"margin-bottom": 6, 			// Space below the bar
 	"margin-left": 8, 				// Space to the left of the bar
-	"margin-right": 0, 				// Space to the right of the bar
+	"margin-right": 3, 				// Space to the right of the bar
     
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces"],
