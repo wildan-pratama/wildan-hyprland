@@ -14,7 +14,8 @@ hypr_pkgs () {
     gtk-engine-murrine dunst nwg-look xdg-desktop-portal-hyprland-git qt5-svg mpc mpd ncmpcpp inetutils\
     pamixer bluez-utils xdg-user-dirs pulsemixer pavucontrol qt5-graphicaleffects networkmanager jq dunst \
     qt5-quickcontrols2 brightnessctl noto-fonts network-manager-applet pipewire wireplumber grim slurp \
-    qt5-wayland qt6-wayland pastel  noto-fonts-emoji wdisplays swww xorg-xhost gvfs gvfs-mtp ntfs-3g ttf-jetbrains-mono-nerd
+    qt5-wayland qt6-wayland pastel  noto-fonts-emoji wdisplays swww xorg-xhost gvfs gvfs-mtp ntfs-3g \
+    ttf-jetbrains-mono-nerd noto-fonts-cjk
 }
 
 gui_pkgs () {
