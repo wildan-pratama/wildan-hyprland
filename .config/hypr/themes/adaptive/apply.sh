@@ -191,17 +191,7 @@ apply_rofi() {
 	if [[ -f "$PATH_ROF"/config.rasi ]]; then
 		sed -i -e "s/icon-theme:.*/icon-theme: \"$rofi_icon\";/g" ${PATH_CONF}/rofi/config.rasi
 	fi
-	# modify rofi scripts
-	sed -i ${PATH_ROF}/themes -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/launcher -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/music -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/powermenu -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/screenshot -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/recording -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/asroot -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/askpass -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/hyprwin -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/scratchpad -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
+	sed -i ${PATH_ROF}/config.bash -e "s/style=.*/style='$THEME'/g"
 	}
 
 # Network Menu ------------------------------

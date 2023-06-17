@@ -3,8 +3,9 @@
 # Nikhil Singh <nik.singh710@gmail.com>
 
 # Variables
+source "$HOME/.config/hypr/bin/config.bash"
 DIR="$HOME/.config/hypr/themes"
-STYLE="paradise"
+STYLE="$style"
 RASI="$DIR/$STYLE/rofi/windows.rasi"
 _listing=false
 _menu_cmd=("rofi" "-dmenu" "-i" "-theme" "${RASI}")

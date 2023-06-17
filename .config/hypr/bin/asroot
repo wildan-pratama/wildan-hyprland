@@ -3,8 +3,9 @@
 ## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 
 # Import Current Theme
+source "$HOME/.config/hypr/bin/config.bash"
 DIR="$HOME/.config/hypr/themes"
-STYLE="paradise"
+STYLE="$style"
 RASI="$DIR/$STYLE/rofi/asroot.rasi"
 
 # rofi sudo askpass helper
@@ -17,7 +18,7 @@ mesg="Run Applications As Root"
 # Options
 layout=`cat ${RASI} | grep 'USE_ICON' | cut -d'=' -f2`
 if [[ "$layout" == 'NO' ]]; then
-	option_1=" Alacritty"
+	option_1=" Terminal"
 	option_2=" Thunar"
 	option_3=" Geany"
 	option_4=" Vim"
@@ -54,7 +55,7 @@ run_rofi() {
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
-		sudo -A -E alacritty
+		sudo -A -E hyprterm root
 	elif [[ "$1" == '--opt2' ]]; then
 		sudo -A -E thunar
 	elif [[ "$1" == '--opt3' ]]; then

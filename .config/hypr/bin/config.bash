@@ -1,0 +1,2 @@
+termconf='alacritty'
+style='paradise'

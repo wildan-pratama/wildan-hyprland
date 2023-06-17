@@ -31,7 +31,7 @@
         "on-click": "music",
         "max-length": 50,
         "format-stopped": "Stopped",
-        "on-click-right": "alacritty --class floating -e ncmpcpp",
+        "on-click-right": "hyprterm music",
         "tooltip": false
     },
     

@@ -1,0 +1,12 @@
+/* Base color */
+@define-color background rgb(38,46,54);
+@define-color line rgb(197,199,196);
+@define-color button rgb(60,79,88);
+
+/* Control Center */
+.control-center {
+  background: @background;
+  padding: 4px;
+  color: @line;
+}
+

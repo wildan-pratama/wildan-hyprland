@@ -17,6 +17,7 @@ PATH_TERM="$PATH_CONF/alacritty"
 PATH_DUNST="$PATH_CONF/dunst"
 PATH_GEANY="$PATH_CONF/geany"
 PATH_WBR="$PATH_CONF/hypr/themes/$THEME/waybar"
+PATH_SNC="$PATH_CONF/hypr/themes/$THEME/notification"
 PATH_ROF="$PATH_CONF/hypr/bin"
 PATH_GTK="$HOME/.local/share/nwg-look"
 
@@ -186,22 +187,19 @@ apply_dunst() {
 	pkill dunst && dunst &
 }
 
+apply_swaync() {
+	sleep 1 && pkill dunst
+	ln -sf ~/.config/hypr/themes/"$THEME"/swaync ~/.config/
+	systemctl --user restart swaync
+	}
+
 apply_rofi() {
 	# modify icon theme
 	if [[ -f "$PATH_ROF"/config.rasi ]]; then
 		sed -i -e "s/icon-theme:.*/icon-theme: \"$rofi_icon\";/g" ${PATH_CONF}/rofi/config.rasi
 	fi
 	# modify rofi scripts
-	sed -i ${PATH_ROF}/themes -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/launcher -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/music -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/powermenu -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/screenshot -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/recording -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/asroot -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/askpass -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/hyprwin -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
-	sed -i ${PATH_ROF}/scratchpad -e "s/STYLE=.*/STYLE=\"$THEME\"/g"
+	sed -i ${PATH_ROF}/config.bash -e "s/style=.*/style='$THEME'/g"
 	}
 
 # Network Menu ------------------------------
@@ -222,7 +220,8 @@ apply_waybar
 apply_terminal
 apply_geany
 apply_appearance
+apply_swaync
 apply_dunst
 apply_rofi
-apply_netmenu
-notify_user
+apply_swaync
+apply_netmenu && notify_user

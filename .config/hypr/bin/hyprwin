@@ -3,8 +3,9 @@
 ## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 
 # Import Current Theme
+source "$HOME/.config/hypr/bin/config.bash"
 DIR="$HOME/.config/hypr/themes"
-STYLE="paradise"
+STYLE="$style"
 RASI="$DIR/$STYLE/rofi/windows.rasi"
 
 # Run

@@ -1,0 +1,205 @@
+/* Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com> */
+
+configuration {
+    location: 						0;
+    fixed-num-lines: 				true;
+    show-icons: 					false;
+    sidebar-mode: 					true;
+    scroll-method: 					1;
+    window-format: 					"[{w}] | {c} | {t}";
+    click-to-exit: 					true;
+    combi-hide-mode-prefix: 		false;
+}
+
+* {
+    border-colour:               var(selected);
+    handle-colour:               var(selected);
+    background-color:             	@background;
+    foreground-colour:           var(foreground);
+    alternate-background:        var(background-alt);
+    normal-background:           var(background);
+    normal-foreground:           var(foreground);
+    urgent-background:           var(urgent);
+    urgent-foreground:           var(background);
+    active-background:           var(active);
+    active-foreground:           var(background);
+    selected-normal-background:  var(selected);
+    selected-normal-foreground:  var(background);
+    selected-urgent-background:  var(active);
+    selected-urgent-foreground:  var(background);
+    selected-active-background:  var(urgent);
+    selected-active-foreground:  var(background);
+    alternate-normal-background: var(background);
+    alternate-normal-foreground: var(foreground);
+    alternate-urgent-background: var(urgent);
+    alternate-urgent-foreground: var(background);
+    alternate-active-background: var(active);
+    alternate-active-foreground: var(background);
+}
+
+/*****----- Global Properties -----*****/
+@import                          "shared/colors.rasi"
+@import                          "shared/fonts.rasi"
+
+window {
+    border: 						0px;
+    border-color: 					@selected;
+    border: 					    2px;
+    border-radius: 					4px;
+    width: 							420px;
+    height: 						0px;
+}
+
+prompt {
+    spacing: 						0;
+    border: 						0;
+    border-radius: 					8px;
+    background-color:             	@background-alt;
+    text-color: 					@foreground;
+    padding:    					6px 14px 6px 10px;
+}
+
+textbox-prompt-colon {
+    expand: 						false;
+    str: 							"";
+    padding:    					6px 4px 6px 4px;
+    text-color: 					inherit;
+}
+
+entry {
+    spacing:    					0;
+    expand:                         true;
+    horizontal-align:               0;
+    text-color: 					@foreground;
+    placeholder-color:              @foreground;
+    placeholder:                    "Search...";
+    padding:    					6px 2px 6px 2px;
+    border: 						0px 0px 0px 0px;
+    border-color: 					@selected;
+    border-radius: 					0px;
+}
+
+case-indicator {
+    spacing:    					0;
+    text-color: 					@foreground;
+}
+
+inputbar {
+    spacing:    					0px;
+    text-color: 					@foreground;
+    border: 						0px;
+    border-color: 					@selected;
+    border-radius: 					0px;
+    children: 						[ prompt,textbox-prompt-colon,entry ];
+}
+
+mainbox {
+    border: 						0px;
+    border-color: 					@selected;
+    spacing: 						15px;
+    padding: 						30px;
+}
+
+listview {
+    lines:							7;
+    columns:						1;
+    fixed-height: 					0;
+    border: 						0px;
+    border-color: 					@foreground;
+    spacing: 						5px;
+    scrollbar: 						false;
+    padding: 						5px 0px 0px;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element {
+    border: 						0px;
+    padding: 						8px;
+}
+element normal.normal {
+    background-color: 				@background;
+    text-color:       				@foreground;
+}
+element normal.urgent {
+    background-color: 				@background;
+    text-color:                  	var(urgent-foreground);
+}
+element normal.active {
+    background-color: 				@background;
+    text-color:       				@active;
+}
+element selected.normal {
+    background-color: 				@selected;
+    text-color:       				@background;
+    border: 						0px;
+    border-radius: 					8px;
+    border-color: 					@selected;
+}
+element selected.urgent {
+    background-color: 				@background;
+    text-color:                  	var(urgent-foreground);
+}
+element selected.active {
+    background-color: 				@background;
+    text-color:       				@selected;
+}
+element alternate.normal {
+    background-color: 				@background;
+    text-color:       				@foreground;
+}
+element alternate.urgent {
+    background-color: 				@background;
+    text-color:       				@foreground;
+}
+element alternate.active {
+    background-color: 				@background;
+    text-color:       				@foreground;
+}
+
+sidebar {
+    border:       					0px;
+    border-color: 					@selected;
+    border-radius: 					0px;
+}
+
+button {
+    margin: 						5px 10px 0px 10px;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    padding: 						8px;
+    background-color:             	@background-alt;
+    text-color: 					@foreground;
+    border: 						0px;
+    border-radius: 					8px;
+    border-color: 					@selected;
+}
+
+button selected {
+    background-color:             	@selected;
+    text-color: 					@background;
+    border: 						0px;
+    border-radius: 					8px;
+    border-color: 					@selected;
+}
+
+scrollbar {
+    width:        					4px;
+    border:       					0px;
+    handle-color: 					@foreground;
+    handle-width: 					8px;
+    padding:      					0;
+}
+
+message {
+    border: 						0px;
+    border-color: 					@selected;
+    padding: 						1px;
+}
+
+textbox {
+    text-color: 					@foreground;
+}

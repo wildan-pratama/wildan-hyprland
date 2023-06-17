@@ -1,0 +1,124 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "left", // Waybar position (top|bottom|left|right)
+    //"spacing": 1, // Gaps between modules (4px)
+    "fixed-center": true,
+    "margin-top": 6, 				// Space above the bar
+	"margin-bottom": 6, 			// Space below the bar
+	"margin-left": 8, 				// Space to the left of the bar
+	"margin-right": 3, 				// Space to the right of the bar
+    
+    // Choose the order of the modules
+    "modules-left": ["wlr/workspaces"],
+    // "modules-center": [],
+    "modules-right": ["custom/recording", "hyprland/submap", "backlight", "pulseaudio", "network", "battery", "clock#hour", "clock#min", "tray"],
+    
+    // Modules configuration
+    "wlr/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-click": "activate",
+        "format": "<big>{icon}</big>",
+        "format-icons": {
+             "1": "一",
+             "2": "二",
+             "3": "三",
+             "4": "四",
+             "5": "五",
+             "6": "六",
+             "7": "七",
+             "8": "八",             
+             "9": "九",             
+         }
+     },
+    
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    
+    "clock#hour": {
+        // "timezone": "America/New_York",
+        "format": "{:%H}",
+        "tooltip": false
+        //"rotate": 270
+    },
+    
+    "clock#min": {
+        // "timezone": "America/New_York",
+        "format": "{:%M}",
+        "tooltip": false
+        //"rotate": 270
+    },
+    
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-",
+		"tooltip": false
+    },
+    
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span color=\"#EFCA84\">{icon}</span>",
+        "format-charging": "<span color=\"#EFCA84\"></span>",
+        "format-plugged": "<span color=\"#EFCA84\"></span>",
+        "format-alt": "{time} <span color=\"#EFCA84\">{icon}</span>",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+    
+    "network": {       
+        "format-wifi": "<span color=\"#C778DD\"></span>",
+        "format-ethernet": "<span color=\"#C778DD\"></span>",
+        "format-linked": "<span color=\"#C778DD\"></span>",
+        "format-disconnected": "轢",
+        //"format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "on-click": "network_menu",
+        "on-click-right": "nm-connection-editor",
+        "tooltip": false
+    },
+    
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "<span color=\"#62AEEF\">{icon}</span>",
+        "format-bluetooth": "<span color=\"#62AEEF\">{icon} </span>",
+        "format-bluetooth-muted": "婢 ",
+        "format-muted": "婢",
+        "format-source": "<span color=\"#62AEEF\"></span>",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": ["", "", "", ""]
+        },
+        "on-double-click": "pavucontrol",
+        "on-click": "pulsemixer --unmute",
+        "on-click-right": "pulsemixer --mute",
+        "tooltip": false
+    },
+    
+	"hyprland/submap": {
+		"format": "<span color=\"#61c766\"></span>",
+		"on-click": "hyprctl dispatch submap reset",
+		"tooltip": false
+	},
+	
+	"custom/recording": {
+		"exec": "recording status",
+		"format": "<span color=\"#BF616A\">{}</span>",
+		"on-click": "recording stop",
+		"restart-interval": 1,
+		"return-type": "json",
+		"tooltip": false
+	}
+}
+

@@ -3,11 +3,12 @@
 ## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 
 # Import Current Theme
+source "$HOME/.config/hypr/bin/config.bash"
 DIR="$HOME/.config/hypr/themes"
-STYLE="paradise"
+STYLE="$style"
 time=`date +%Y-%m-%d-%H-%M-%S`
 dir="Videos/Screencasts"
-file="$HOME/$dir/Screencasts_${time}.mkv"
+file="$HOME/$dir/Screencasts_${time}.mp4"
 log="$HOME/$dir/screencasts.log"
 pid="$HOME/$dir/process.pid"
 

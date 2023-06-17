@@ -1,0 +1,10 @@
+** Message: 17:05:58.244: factory.vala:42: Loading widget: label
+
+** (swaync:33133): WARNING **: 17:05:58.244: backlightUtil.vala:41: Could not find device /sys/class/backlight/intel_backlight/brightness
+
+** Message: 17:05:58.247: factory.vala:42: Loading widget: backlight
+** Message: 17:05:58.248: factory.vala:42: Loading widget: volume
+** Message: 17:05:58.255: factory.vala:42: Loading widget: mpris
+** Message: 17:05:58.255: factory.vala:42: Loading widget: title
+** Message: 17:05:58.255: factory.vala:42: Loading widget: dnd
+Could not acquire notification name. Please close any other notification daemon like mako or dunst

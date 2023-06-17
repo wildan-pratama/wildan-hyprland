@@ -1,0 +1,26 @@
+#!/bin/bash
+
+hypr="$HOME/.config/hypr/bin/config.bash"
+source "$hypr"
+term="$termconf"
+
+# Exec script
+if [ "$1" == "" ];
+then
+    $term
+elif [ "$1" == "--set" ];
+then
+	sed -i "$hypr" -e "s/termconf=.*/termconf='$2'/g"
+elif [ "$1" == "floating" ];
+then
+	$term --class termfloating
+elif [ "$1" == "music" ];
+then
+	$term --class Music \
+		  -e ~/.ncmpcpp/scripts/ncmpcpp-art
+elif [ "$1" == "root" ];
+then
+	$term --class floating -e /bin/bash
+fi
+
+
