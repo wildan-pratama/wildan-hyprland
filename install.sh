@@ -22,7 +22,7 @@ hypr_pkgs () {
     inetutils pamixer bluez-utils xdg-user-dirs qt5-graphicaleffects xorg-xhost xsettingsd \
     gvfs gvfs-mtp ntfs-3g jq dunst qt5-quickcontrols2 brightnessctl kvantum qt5-wayland qt6-wayland pastel \
     pulsemixer pavucontrol mpc mpd ncmpcpp pipewire wireplumber grim slurp wdisplays \
-    noto-fonts noto-fonts-emoji noto-fonts-cjk ly
+    noto-fonts noto-fonts-emoji noto-fonts-cjk ly wget unzip
 }
 
 gui_pkgs () {
@@ -32,7 +32,20 @@ gui_pkgs () {
 
 cp_theme () {
     sudo cp -r usr /
-    sudo cp -r etc /
+    # Install GTK Themes
+    git clone https://github.com/wildan-pratama/archcraft-themes.git
+    cd archcraft-themes
+    ./install.sh
+    cd ..
+
+    # Install Icon Themes
+    git git clone https://github.com/wildan-pratama/archcraft-icons.git
+    cd archcraft-icons
+    ./install.sh
+    cd ..
+
+    # Install nerdfont
+    ./nerdfonts.sh
 }
 
 
