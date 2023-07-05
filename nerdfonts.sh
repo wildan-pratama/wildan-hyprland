@@ -1,23 +1,32 @@
 #!/bin/bash
-mkdir ~/.local/share/fonts
+DIR="$HOME/.local/share/fonts"
+nerd () {
+    cd /tmp
+    fonts=( 
+    "FiraCode" 
+    "Go-Mono" 
+    "Hack" 
+    "Inconsolata" 
+    "Iosevka" 
+    "JetBrainsMono" 
+    "Mononoki" 
+    "RobotoMono" 
+    "SourceCodePro" 
+    )
 
-cd /tmp
-fonts=( 
-"FiraCode" 
-"Go-Mono" 
-"Hack" 
-"Inconsolata" 
-"Iosevka" 
-"JetBrainsMono" 
-"Mononoki" 
-"RobotoMono" 
-"SourceCodePro" 
-)
+    for font in ${fonts[@]}
+    do
+        wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/$font.zip
+        unzip $font.zip -d $DIR/$font/
+        rm $font.zip
+    done
+    fc-cache
+}
+if [ ! -d "$DIR" ]; then
+    echo "Directory $DIR does not exist. Creating it now."
+    mkdir -p $DIR
+    nerd
+else
+    nerd
+fi
 
-for font in ${fonts[@]}
-do
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/$font.zip
-    unzip $font.zip -d $HOME/.local/share/fonts/$font/
-    rm $font.zip
-done
-fc-cache
