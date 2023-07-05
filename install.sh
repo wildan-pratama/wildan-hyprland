@@ -31,7 +31,6 @@ gui_pkgs () {
 
 
 cp_theme () {
-    sudo cp -r usr /
     # Install GTK Themes
     git clone https://github.com/wildan-pratama/archcraft-themes.git
     cd archcraft-themes
