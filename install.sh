@@ -43,6 +43,12 @@ cp_theme () {
     ./install.sh
     cd ..
 
+    # Download backgrunds
+    git git clone https://github.com/wildan-pratama/archcraft-wallpapers.git
+    cd archcraft-wallpapers
+    ./install.sh
+    cd ..
+
     # Install nerdfont
     ./nerdfonts.sh
 }
